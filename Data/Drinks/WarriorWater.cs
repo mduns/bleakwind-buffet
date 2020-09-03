@@ -15,14 +15,14 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class WarriorWater
     {
-        private Size sizes = Size.Small;
+        private Size size = Size.Small;
         /// <summary>
         /// returns the size of drink that the customer ordered
         /// </summary>
-        public Size Sizes
+        public Size Size
         {
-            get { return sizes; }
-            set { sizes = value; }
+            get { return size; }
+            set { size = value; }
         }
         /// <summary>
         /// returns the price of Warrior Water
@@ -31,8 +31,8 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (sizes == Size.Small) return 0.00;
-                else if (sizes == Size.Medium) return 0.00;
+                if (size == Size.Small) return 0.00;
+                else if (size == Size.Medium) return 0.00;
                 else return 0.00;
             }
         }
@@ -43,8 +43,8 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (sizes == Size.Small) return 0;
-                else if (sizes == Size.Medium) return 0;
+                if (size == Size.Small) return 0;
+                else if (size == Size.Medium) return 0;
                 else return 0;
             }
         }
@@ -76,7 +76,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            return Sizes + " " + "Warrior Water";
+            return Size + " " + "Warrior Water";
         }
     }
 }

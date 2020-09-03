@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrOmelette
+    public class GardenOrcOmelette
     {
         /// <summary>
         /// returns the price of the garden orc omelette

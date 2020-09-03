@@ -18,7 +18,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// returns the size of drink that the customer ordered
         /// </summary>
-        public Size Sizes
+        public Size Size
         {
             get { return sizes; }
             set { sizes = value; }
@@ -70,7 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            return Sizes + " " + "Aretino Apple Juice";
+            return Size + " " + "Aretino Apple Juice";
         }
     }
 }

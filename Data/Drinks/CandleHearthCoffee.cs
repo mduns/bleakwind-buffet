@@ -18,7 +18,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// returns the size of drink that the customer ordered
         /// </summary>
-        public Size Sizes
+        public Size Size
         {
             get { return sizes; }
             set { sizes = value; }
@@ -77,9 +77,9 @@ namespace BleakwindBuffet.Data.Drinks
         {
             if (Decaf)
             {
-                return Sizes + " Decaf Candlehearth Coffee";
+                return Size + " Decaf Candlehearth Coffee";
             }
-            return Sizes + " " + "Candlehearth Coffee";
+            return Size + " " + "Candlehearth Coffee";
         }
     }
 }
