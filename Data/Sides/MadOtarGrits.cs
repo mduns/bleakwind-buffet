@@ -19,7 +19,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// returns the size of side that the customer ordered
         /// </summary>
-        public Size Sizes
+        public Size Size
         {
             get { return sizes; }
             set { sizes = value; }
@@ -55,7 +55,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <returns></returns>
         public override string ToString()
         {
-            return Sizes + " " + "Mad Otar Grits";
+            return Size + " " + "Mad Otar Grits";
         }
     }
 }
