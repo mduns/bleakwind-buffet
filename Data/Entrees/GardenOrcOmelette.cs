@@ -17,12 +17,13 @@ namespace BleakwindBuffet.Data.Entrees
         {
             get { return 4.57; }
         }
+        private uint calories = 404;
         /// <summary>
         /// returns the number of calories in the garden orc omelette.
         /// </summary>
-        public double Calories
+        public uint Calories
         {
-            get { return 404; }
+            get { return calories; }
         }
         /// <summary>
         /// returns the special instrutions for the garden orc omelette
@@ -42,19 +43,19 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// returns whether or not to have broccoli.
         /// </summary>
-        public bool Broccoli { get; set; }
+        public bool Broccoli { get; set; } = true;
         /// <summary>
         /// returns whether or not to have mushrooms.
         /// </summary>
-        public bool Mushrooms { get; set; }
+        public bool Mushrooms { get; set; } = true;
         /// <summary>
         /// returns whether or not to have tomato
         /// </summary>
-        public bool Tomato { get; set; }
+        public bool Tomato { get; set; } = true;
         /// <summary>
         /// returns whether or not to have cheddar.
         /// </summary>
-        public bool Cheddar { get; set; }
+        public bool Cheddar { get; set; } = true;
         /// <summary>
         /// overrides to ToString method to return "Garden Orc Omelette"
         /// </summary>

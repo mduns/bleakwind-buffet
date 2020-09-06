@@ -17,12 +17,13 @@ namespace BleakwindBuffet.Data.Entrees
         {
             get { return 8.32; }
         }
+        private uint calories = 943;
         /// <summary>
         /// returns the amount of calories in the Thalmor Triple
         /// </summary>
         public uint Calories
         {
-            get { return 943; }
+            get { return calories; }
         }
         /// <summary>
         /// adds the special instructions to a list which can have new instructions added to it
@@ -48,43 +49,43 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// gets whether or not to have a bun
         /// </summary>
-        public bool Bun { get; set; }
+        public bool Bun { get; set; } = true;
         /// <summary>
         /// returns whether or not to have ketchup
         /// </summary>
-        public bool Ketchup { get; set; }
+        public bool Ketchup { get; set; } = true;
         /// <summary>
         /// returns whether or not to have mustard. Adds to special instructions if no mustard.
         /// </summary>
-        public bool Mustard { get; set; }
+        public bool Mustard { get; set; } = true;
         /// <summary>
         ///  returns whether or not to have pickles.
         /// </summary>
-        public bool Pickle { get; set; }
+        public bool Pickle { get; set; } = true;
         /// <summary>
         ///  returns whether or not to have cheese. Adds to special instructions if no cheese.
         /// </summary>
-        public bool Cheese { get; set; }
+        public bool Cheese { get; set; } = true;
         /// <summary>
         /// returns whether or not to have tomato. Adds to special instructions if no tomato.
         /// </summary>
-        public bool Tomato { get; set; }
+        public bool Tomato { get; set; } = true;
         /// <summary>
         /// returns whether or not to have lettuce. Adds to special instructions if no lettuce.
         /// </summary>
-        public bool Lettuce { get; set; }
+        public bool Lettuce { get; set; } = true;
         /// <summary>
         /// returns whether or not to have mayo. Adds to special instructions if no mayo.
         /// </summary>
-        public bool Mayo { get; set; }
+        public bool Mayo { get; set; } = true;
         /// <summary>
         /// returns whether or not to have bacon. Adds to special instructions if no bacon.
         /// </summary>
-        public bool Bacon { get; set; }
+        public bool Bacon { get; set; } = true;
         /// <summary>
         /// returns whether or not to have egg. Adds to special instructions if no egg.
         /// </summary>
-        public bool Egg { get; set; }
+        public bool Egg { get; set; } = true;
         /// <summary>
         /// overrides to string method to "Thalmor Triple"
         /// </summary>

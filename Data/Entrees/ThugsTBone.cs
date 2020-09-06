@@ -17,15 +17,16 @@ namespace BleakwindBuffet.Data.Entrees
         {
             get { return 6.44; }
         }
+        private uint calories = 982;
         /// <summary>
         /// returns the number of calories in the thugs t bone
         /// </summary>
-        public double Calories
+        public uint Calories
         {
-            get { return 982; }
+            get { return calories; }
         }
         /// <summary>
-        /// returns the special instrutions for the philly poacher
+        /// returns the special instrutions for the thugs t bone
         /// </summary>
         public List<string> SpecialInstructions
         {

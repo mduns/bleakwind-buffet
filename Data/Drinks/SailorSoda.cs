@@ -60,7 +60,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// returns whether or not to have Ice
         /// </summary>
-        public bool Ice { get; set; }
+        public bool Ice { get; set; } = true;
 
         private SodaFlavor flavor = SodaFlavor.Cherry;
         /// <summary>

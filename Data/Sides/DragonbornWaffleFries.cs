@@ -48,14 +48,24 @@ namespace BleakwindBuffet.Data.Sides
                 else return 100;
             }
         }
-
+        /// <summary>
+        /// returns an empty list whenever specialinstructions is called
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> instructions = new List<string>();
+                return instructions;
+            }
+        }
         /// <summary>
         /// overrides ToString method to return "Size Dragaonborn Waffle Fries"
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return Size + " " + "Dragaonborn Waffle Fries";
+            return Size + " " + "Dragonborn Waffle Fries";
         }
     }
 }

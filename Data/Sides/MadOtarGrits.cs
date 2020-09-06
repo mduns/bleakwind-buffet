@@ -48,7 +48,17 @@ namespace BleakwindBuffet.Data.Sides
                 else return 179;
             }
         }
-
+        /// <summary>
+        /// returns an empty list whenever specialinstructions is called
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> instructions = new List<string>();
+                return instructions;
+            }
+        }
         /// <summary>
         /// overrides ToString method to return "Size Mad Otar Grits"
         /// </summary>

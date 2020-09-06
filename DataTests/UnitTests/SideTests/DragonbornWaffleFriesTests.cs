@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Mason Dunsmore and Zachery Brunner
  * Class: DragonbornWaffleFriesTests.cs
  * Purpose: Test the DragonbornWaffleFries.cs class in the Data library
  */
@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Sides;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -15,16 +16,27 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [Fact]
         public void ShouldBeSmallByDefault()
         {
+            var dw = new DragonbornWaffleFries();
+            Assert.Equal(Size.Small, dw.Size);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            var dw = new DragonbornWaffleFries();
+            dw.Size = Size.Medium;
+            Assert.Equal(Size.Medium, dw.Size);
+            dw.Size = Size.Large;
+            Assert.Equal(Size.Large, dw.Size);
+            dw.Size = Size.Small;
+            Assert.Equal(Size.Small, dw.Size);
         }
 
         [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
+            var dw = new DragonbornWaffleFries();
+            Assert.Empty(dw.SpecialInstructions);
         }
 
         [Theory]
@@ -33,6 +45,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 0.96)]
         public void ShouldReturnCorrectPriceBasedOnSize(Size size, double price)
         {
+            var dw = new DragonbornWaffleFries()
+            {
+                Size = size,
+            };
+            Assert.Equal(price, dw.Price);
         }
 
         [Theory]
@@ -41,6 +58,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 100)]
         public void ShouldReturnCorrectCaloriesBasedOnSize(Size size, uint calories)
         {
+            var dw = new DragonbornWaffleFries()
+            {
+                Size = size
+            };
+            Assert.Equal(calories, dw.Calories);
         }
 
         [Theory]
@@ -49,6 +71,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, "Large Dragonborn Waffle Fries")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
+            var dw = new DragonbornWaffleFries()
+            {
+                Size = size
+            };
+            Assert.Equal(name, dw.ToString());
         }
     }
 }

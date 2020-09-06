@@ -64,7 +64,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// returns whether or not to have Ice
         /// </summary>
-        public bool Ice { get; set; }
+        public bool Ice { get; set; } = true;
         /// <summary>
         /// returns whether or not to add lemon
         /// </summary>
