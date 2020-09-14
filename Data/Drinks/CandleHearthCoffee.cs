@@ -12,45 +12,44 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// class for Candlehearth Coffee 
     /// </summary>
-    public class CandlehearthCoffee
+    public class CandlehearthCoffee : Drink, IOrderItem
     {
-        private Size sizes = Size.Small;
-        /// <summary>
-        /// returns the size of drink that the customer ordered
-        /// </summary>
-        public Size Size
-        {
-            get { return sizes; }
-            set { sizes = value; }
-        }
         /// <summary>
         /// returns the price of Candlehearth Coffee
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (sizes == Size.Small) return 0.75;
-                else if (sizes == Size.Medium) return 1.25;
-                else return 1.75;
+                switch (Size)
+                {
+                    case Size.Small: return 0.75;
+                    case Size.Medium: return 1.25;
+                    case Size.Large: return 1.75;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns the calories in Candlehearth Coffee
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                if (sizes == Size.Small) return 7;
-                else if (sizes == Size.Medium) return 10;
-                else return 20;
+                switch (Size)
+                {
+                    case Size.Small: return 7;
+                    case Size.Medium: return 10;
+                    case Size.Large: return 20;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns any special instructions for Candlehearth Coffee
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -64,11 +63,29 @@ namespace BleakwindBuffet.Data.Drinks
         /// returns whether or not to have Ice
         /// </summary>
         public bool Ice { get; set; } = false;
-
+        /// <summary>
+        /// returns whether or not to have cream
+        /// </summary>
         public bool RoomForCream { get; set; } = false;
-
+        /// <summary>
+        /// returns whether or not to have decaf
+        /// </summary>
         public bool Decaf { get; set; } = false;
-
+        /// <summary>
+        /// constructor if size needs to be set 
+        /// </summary>
+        /// <param name="size">the size to be set</param>
+        public CandlehearthCoffee(Size size)
+        {
+            Size = size;
+        }
+        /// <summary>
+        /// constructor if size does not need to be set
+        /// </summary>
+        public CandlehearthCoffee()
+        {
+            Size = Size.Small;
+        }
         /// <summary>
         /// overrides ToString method to return "Size [Decaf] Candlehearth Coffee"
         /// </summary>

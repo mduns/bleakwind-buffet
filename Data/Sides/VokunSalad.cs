@@ -13,51 +13,65 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// class for Warrior Water
     /// </summary>
-    public class VokunSalad
+    public class VokunSalad : Side, IOrderItem
     {
-        private Size sizes = Size.Small;
-        /// <summary>
-        /// returns the size of side that the customer ordered
-        /// </summary>
-        public Size Size
-        {
-            get { return sizes; }
-            set { sizes = value; }
-        }
         /// <summary>
         /// returns the price of Vokun Salad
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (sizes == Size.Small) return 0.93;
-                else if (sizes == Size.Medium) return 1.28;
-                else return 1.82;
+                switch (Size)
+                {
+                    case Size.Small: return 0.93;
+                    case Size.Medium: return 1.28;
+                    case Size.Large: return 1.82;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns the calories in Vokun Salad
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                if (sizes == Size.Small) return 41;
-                else if (sizes == Size.Medium) return 52;
-                else return 73;
+                switch (Size)
+                {
+                    case Size.Small: return 41;
+                    case Size.Medium: return 52;
+                    case Size.Large: return 73;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns an empty list whenever specialinstructions is called
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
                 return instructions;
             }
+        }
+        /// <summary>
+        /// constructor if size needs to be set
+        /// </summary>
+        /// <param name="size">size that we want to set it to</param>
+        public VokunSalad(Size size)
+        {
+            Size = size;
+        }
+        /// <summary>
+        /// constructor if size does not need to be set
+        /// </summary>
+        public VokunSalad()
+        {
+            Size = Size.Small;
         }
         /// <summary>
         /// overrides ToString method to return "Size Vokun Salad"

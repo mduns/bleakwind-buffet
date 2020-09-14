@@ -8,26 +8,26 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class DoubleDraugr
-	{
+	public class DoubleDraugr : Entree, IOrderItem
+    {
 		/// <summary>
 		/// returns the price of the double Draugr
 		/// </summary>
-		public double Price
+		public override double Price
 		{
 			get { return 7.32; }
 		}
 		/// <summary>
 		/// returns the amount of calories in the Double Draugr
 		/// </summary>
-		public uint Calories
+		public override uint Calories
 		{
 			get { return 843; }
 		}
         /// <summary>
         /// adds the special instructions to a list which can have new instructions added to it
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

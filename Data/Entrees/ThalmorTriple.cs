@@ -8,12 +8,12 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThalmorTriple
+    public class ThalmorTriple : Entree, IOrderItem
     {
         /// <summary>
         /// returns the price of the Thalmor Triple
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 8.32; }
         }
@@ -21,14 +21,14 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// returns the amount of calories in the Thalmor Triple
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return calories; }
         }
         /// <summary>
         /// adds the special instructions to a list which can have new instructions added to it
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

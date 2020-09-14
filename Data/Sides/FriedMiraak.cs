@@ -7,57 +7,72 @@ using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Runtime.ExceptionServices;
 
 namespace BleakwindBuffet.Data.Sides
 {
     /// <summary>
     /// class for Fried Miraak
     /// </summary>
-    public class FriedMiraak
+    public class FriedMiraak : Side, IOrderItem
     {
-        private Size sizes = Size.Small;
-        /// <summary>
-        /// returns the size of side that the customer ordered
-        /// </summary>
-        public Size Size
-        {
-            get { return sizes; }
-            set { sizes = value; }
-        }
         /// <summary>
         /// returns the price of Fried Miraak
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (sizes == Size.Small) return 1.78;
-                else if (sizes == Size.Medium) return 2.01;
-                else return 2.88;
+                switch (Size)
+                {
+                    case Size.Small: return 1.78;
+                    case Size.Medium: return 2.01;
+                    case Size.Large: return 2.88;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns the calories in Fried Miraak
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                if (sizes == Size.Small) return 151;
-                else if (sizes == Size.Medium) return 236;
-                else return 306;
+                switch (Size)
+                {
+                    case Size.Small: return 151;
+                    case Size.Medium: return 236;
+                    case Size.Large: return 306;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns an empty list whenever specialinstructions is called
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
                 return instructions;
             }
+        }
+        /// <summary>
+        /// construtor if size needs to be set
+        /// </summary>
+        /// <param name="size">the size that we want to set it to</param>
+        public FriedMiraak(Size size)
+        {
+            Size = size;
+        }
+        /// <summary>
+        /// constructor if size is small
+        /// </summary>
+        public FriedMiraak()
+        {
+            Size = Size.Small;
         }
         /// <summary>
         /// overrides ToString method to return "Size Fried Miraak"

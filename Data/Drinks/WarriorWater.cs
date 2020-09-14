@@ -13,45 +13,44 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// class for Warrior Water
     /// </summary>
-    public class WarriorWater
+    public class WarriorWater : Drink, IOrderItem
     {
-        private Size size = Size.Small;
-        /// <summary>
-        /// returns the size of drink that the customer ordered
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
         /// <summary>
         /// returns the price of Warrior Water
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (size == Size.Small) return 0.00;
-                else if (size == Size.Medium) return 0.00;
-                else return 0.00;
+                switch (Size)
+                {
+                    case Size.Small: return 0.00;
+                    case Size.Medium: return 0.00;
+                    case Size.Large: return 0.00;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns the calories in Warrior Water
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                if (size == Size.Small) return 0;
-                else if (size == Size.Medium) return 0;
-                else return 0;
+                switch (Size)
+                {
+                    case Size.Small: return 0;
+                    case Size.Medium: return 0;
+                    case Size.Large: return 0;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns any special instructions for Warrior Water
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -69,7 +68,21 @@ namespace BleakwindBuffet.Data.Drinks
         /// returns whether or not to add lemon
         /// </summary>
         public bool Lemon { get; set; } = false;
-
+        /// <summary>
+        /// constructor if size needs to be set
+        /// </summary>
+        /// <param name="size">the size to be set</param>
+        public WarriorWater(Size size)
+        {
+            Size = size;
+        }
+        /// <summary>
+        /// constructor if size does not need to be set
+        /// </summary>
+        public WarriorWater()
+        {
+            Size = Size.Small;
+        }
         /// <summary>
         /// overrides ToString method to return "Size Warrior Water"
         /// </summary>

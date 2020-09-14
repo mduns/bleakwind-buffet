@@ -12,45 +12,44 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// class for Markarth Milk
     /// </summary>
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink, IOrderItem
     {
-        private Size sizes = Size.Small;
-        /// <summary>
-        /// returns the size of drink that the customer ordered
-        /// </summary>
-        public Size Size
-        {
-            get { return sizes; }
-            set { sizes = value; }
-        }
         /// <summary>
         /// returns the price of Markarth Milk
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (sizes == Size.Small) return 1.05;
-                else if (sizes == Size.Medium) return 1.11;
-                else return 1.22;
+                switch (Size)
+                {
+                    case Size.Small: return 1.05;
+                    case Size.Medium: return 1.11;
+                    case Size.Large: return 1.22;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns the calories in Markarth Milk
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                if (sizes == Size.Small) return 56;
-                else if (sizes == Size.Medium) return 72;
-                else return 93;
+                switch (Size)
+                {
+                    case Size.Small: return 56;
+                    case Size.Medium: return 72;
+                    case Size.Large: return 93;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
         }
         /// <summary>
         /// returns any special instructions for Markarth Milk 
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -63,7 +62,21 @@ namespace BleakwindBuffet.Data.Drinks
         /// returns whether or not to have Ice
         /// </summary>
         public bool Ice { get; set; } = false;
-
+        /// <summary>
+        /// constructor to set size
+        /// </summary>
+        /// <param name="size">the size to be set</param>
+        public MarkarthMilk(Size size)
+        {
+            Size = size;
+        }
+        /// <summary>
+        /// constructor if size does not need to be set
+        /// </summary>
+        public MarkarthMilk()
+        {
+            Size = Size.Small;
+        }
         /// <summary>
         /// overrides ToString method to return "Size Markarth Milk"
         /// </summary>
