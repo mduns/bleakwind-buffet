@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="PointOfSale.OrderComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".35*"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="items" Grid.ColumnSpan="2" Grid.RowSpan="1" ScrollViewer.CanContentScroll="True"/>
+        <TextBox Name="total" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Left" FontSize="15" Text="Total: $"/>
+        <TextBox Name="tax" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Left" FontSize="15" Text="Tax: $"/>
+        <TextBox Name="subtotal" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left" FontSize="15" Text="Subtotal: $"/>
+        <Button Name="payButton" Grid.Column="1" Grid.Row ="4" Background="#512888">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <TextBlock Text="Pay" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White" />
+        </Button>
+        <Button Name="deleteButton" Grid.Column="0" Grid.Row ="4" Background="#512888">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <TextBlock Text="Delete" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White" />
+        </Button>
+    </Grid>
+</UserControl>
