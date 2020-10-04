@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.EntreeUI.PhillyPoacher"
+﻿<UserControl x:Class="PointOfSale.EntreeUI.PhillyPoacherUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -20,13 +20,13 @@
         <TextBlock Text="Philly Poacher Customization" FontSize="30" Grid.ColumnSpan="3" FontFamily="Arial Rounded MT Bold" 
                    Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
-            <CheckBox Name="sirloin" IsChecked="True" HorizontalAlignment="Left">
+            <CheckBox Name="sirloin" IsChecked="{Binding Path=Sirloin}" HorizontalAlignment="Left">
                 <TextBlock Text="Sirloin" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
-            <CheckBox Name="onion" IsChecked="True" HorizontalAlignment="Left">
+            <CheckBox Name="onion" IsChecked="{Binding Path=Onion}" HorizontalAlignment="Left">
                 <TextBlock Text="Onion" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
-            <CheckBox Name="roll" IsChecked="True" HorizontalAlignment="Left">
+            <CheckBox Name="roll" IsChecked="{Binding Path=Roll}" HorizontalAlignment="Left">
                 <TextBlock Text="Roll" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
         </StackPanel>

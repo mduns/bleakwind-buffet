@@ -22,12 +22,12 @@ namespace PointOfSale.EntreeUI
     /// <summary>
     /// Interaction logic for ThugsTBone.xaml
     /// </summary>
-    public partial class ThugsTBone : UserControl
+    public partial class ThugsTBoneUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public ThugsTBone()
+        public ThugsTBoneUC()
         {
             InitializeComponent();
         }

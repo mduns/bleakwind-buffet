@@ -22,12 +22,12 @@ namespace PointOfSale.EntreeUI
     /// <summary>
     /// Interaction logic for PhillyPoacher.xaml
     /// </summary>
-    public partial class PhillyPoacher : UserControl
+    public partial class PhillyPoacherUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public PhillyPoacher()
+        public PhillyPoacherUC()
         {
             InitializeComponent();
         }

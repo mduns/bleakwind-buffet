@@ -22,12 +22,12 @@ namespace PointOfSale.EntreeUI
     /// <summary>
     /// Interaction logic for SmokehouseSkeleton.xaml
     /// </summary>
-    public partial class SmokehouseSkeleton : UserControl
+    public partial class SmokehouseSkeletonUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public SmokehouseSkeleton()
+        public SmokehouseSkeletonUC()
         {
             InitializeComponent();
         }

@@ -22,12 +22,12 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for BriarheartBurger.xaml
     /// </summary>
-    public partial class BriarheartBurger : UserControl
+    public partial class BriarheartBurgerUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public BriarheartBurger()
+        public BriarheartBurgerUC()
         {
             InitializeComponent();
         }

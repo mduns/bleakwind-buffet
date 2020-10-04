@@ -22,12 +22,12 @@ namespace PointOfSale.DrinkUI
     /// <summary>
     /// Interaction logic for WarriorWater.xaml
     /// </summary>
-    public partial class WarriorWater : UserControl
+    public partial class WarriorWaterUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public WarriorWater()
+        public WarriorWaterUC()
         {
             InitializeComponent();
         }

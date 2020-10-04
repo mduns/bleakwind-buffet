@@ -2,6 +2,7 @@
  * Class: Entrees.xaml.cs
  * Purpose: Handles user input for the entrees xaml
  */
+using BleakwindBuffet.Data.Entrees;
 using PointOfSale.EntreeUI;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void bbButton_Click(object sender, RoutedEventArgs e)
         {
-            var bb = new BriarheartBurger();
+            var bb = new BriarheartBurgerUC();
+            bb.DataContext = new BriarheartBurger();
             this.Content = bb;
         }
         /// <summary>
@@ -49,7 +51,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ddButton_Click(object sender, RoutedEventArgs e)
         {
-            var dd = new DoubleDraugr();
+            var dd = new DoubleDraugrUC();
+            dd.DataContext = new DoubleDraugr();
             this.Content = dd;
         }
         /// <summary>
@@ -59,7 +62,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void gocButton_Click(object sender, RoutedEventArgs e)
         {
-            var goc = new GardenOrcOmelette();
+            var goc = new GardenOrcOmeletteUC();
+            goc.DataContext = new GardenOrcOmelette();
             this.Content = goc;
         }
         /// <summary>
@@ -69,7 +73,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ppButton_Click(object sender, RoutedEventArgs e)
         {
-            var pp = new PhillyPoacher();
+            var pp = new PhillyPoacherUC();
+            pp.DataContext = new PhillyPoacher();
             this.Content = pp;
         }
         /// <summary>
@@ -79,7 +84,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ssButton_Click(object sender, RoutedEventArgs e)
         {
-            var ss = new SmokehouseSkeleton();
+            var ss = new SmokehouseSkeletonUC();
+            ss.DataContext = new SmokehouseSkeleton();
             this.Content = ss;
         }
         /// <summary>
@@ -89,7 +95,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ttButton_Click(object sender, RoutedEventArgs e)
         {
-            var tt = new ThalmorTriple();
+            var tt = new ThalmorTripleUC();
+            tt.DataContext = new ThalmorTriple();
             this.Content = tt;
         }
         /// <summary>
@@ -99,7 +106,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ttbButton_Click(object sender, RoutedEventArgs e)
         {
-            var ttb = new ThugsTBone();
+            var ttb = new ThugsTBoneUC();
+            ttb.DataContext = new ThugsTBone();
             this.Content = ttb;
         }
         /// <summary>

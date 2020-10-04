@@ -4,6 +4,8 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,20 +18,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Drinks;
 
 namespace PointOfSale.DrinkUI
 {
     /// <summary>
     /// Interaction logic for SailorSoda.xaml
     /// </summary>
-    public partial class SailorSoda : UserControl
+    public partial class SailorSodaUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public SailorSoda()
+        public SailorSodaUC()
         {
             InitializeComponent();
+            small.IsChecked = true;
         }
         /// <summary>
         /// Event handler for the backButton

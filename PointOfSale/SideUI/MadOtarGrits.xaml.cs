@@ -22,12 +22,12 @@ namespace PointOfSale.SideUI
     /// <summary>
     /// Interaction logic for MadOtarGrits.xaml
     /// </summary>
-    public partial class MadOtarGrits : UserControl
+    public partial class MadOtarGritsUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public MadOtarGrits()
+        public MadOtarGritsUC()
         {
             InitializeComponent();
         }

@@ -22,12 +22,12 @@ namespace PointOfSale.DrinkUI
     /// <summary>
     /// Interaction logic for MarkarthMilk.xaml
     /// </summary>
-    public partial class MarkarthMilk : UserControl
+    public partial class MarkarthMilkUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public MarkarthMilk()
+        public MarkarthMilkUC()
         {
             InitializeComponent();
         }

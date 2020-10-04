@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.DrinkUI.SailorSoda"
+﻿<UserControl x:Class="PointOfSale.DrinkUI.SailorSodaUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -20,20 +20,20 @@
         <TextBlock Text="Sailor Soda Customization" FontSize="30" Grid.ColumnSpan="3" FontFamily="Arial Rounded MT Bold" 
                    Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
         <StackPanel Grid.Column="1" Grid.Row="1">
-            <CheckBox Name="ice" IsChecked="True" HorizontalAlignment="Left">
+            <CheckBox Name="ice" IsChecked="{Binding Path=Ice}" HorizontalAlignment="Left">
                 <TextBlock Text="Ice" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
         </StackPanel>
-        <StackPanel Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
-            <CheckBox Name="small" IsChecked="True" HorizontalAlignment="Left">
+        <StackPanel Grid.Column="0" Grid.Row="1" Name="Size">
+            <RadioButton Name="small" GroupName="Size" Grid.Column="0" Grid.Row="1" IsChecked="True">
                 <TextBlock Text="Small" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
-            </CheckBox>
-            <CheckBox Name="medium" IsChecked="False" HorizontalAlignment="Left">
+            </RadioButton>
+            <RadioButton Name="medium" GroupName="Size" Grid.Column="0" Grid.Row="1">
                 <TextBlock Text="Medium" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
-            </CheckBox>
-            <CheckBox Name="large" IsChecked="False" HorizontalAlignment="Left">
+            </RadioButton>
+            <RadioButton Name="large" GroupName="Size" Grid.Column="0" Grid.Row="1">
                 <TextBlock Text="Large" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
-            </CheckBox>
+            </RadioButton>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
             <RadioButton Name="blackberry" GroupName="Size" IsChecked="False" HorizontalAlignment="Left">

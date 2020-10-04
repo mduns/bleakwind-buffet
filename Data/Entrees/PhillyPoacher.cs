@@ -5,11 +5,13 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class PhillyPoacher : Entree, IOrderItem
+    public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// returns the price of the philly poacher
         /// </summary>
@@ -39,18 +41,45 @@ namespace BleakwindBuffet.Data.Entrees
                 return instructions;
             }
         }
+        private bool sirloin = true;
         /// <summary>
         /// returns whether or not to have sirloin.
         /// </summary>
-        public bool Sirloin { get; set; } = true;
+        public bool Sirloin
+        {
+            get { return sirloin; }
+            set
+            {
+                sirloin = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+            }
+        }
+        private bool onion = true;
         /// <summary>
         /// returns whether or not to have onion
         /// </summary>
-        public bool Onion { get; set; } = true;
+        public bool Onion
+        {
+            get { return onion; }
+            set 
+            { 
+                onion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+            }
+        }
+        private bool roll = true;
         /// <summary>
         /// returns whether or not to have roll
         /// </summary> 
-        public bool Roll { get; set; } = true;
+        public bool Roll
+        {
+            get { return roll; }
+            set
+            {
+                roll = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+            }
+        }
         /// <summary>
         /// overrides to string method to "Philly Poacher"
         /// </summary>

@@ -6,14 +6,19 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Transactions;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// class for Aretino Apple Juice
     /// </summary>
-    public class AretinoAppleJuice : Drink, IOrderItem
+    public class AretinoAppleJuice : Drink, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// returns the price of Aretino Apple Juice
         /// </summary>
@@ -25,7 +30,7 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     case Size.Small: return 0.62;
                     case Size.Medium: return 0.87;
-                    case Size.Large: return 1.01;
+                    case Size.Large: return  1.01;
                     default: throw new NotImplementedException("Should never be reached");
                 }
             }
@@ -58,10 +63,35 @@ namespace BleakwindBuffet.Data.Drinks
                 return instructions;
             }
         }
+
+        private bool ice = false;
         /// <summary>
         /// returns whether or not to have Ice
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+            }
+        }
+        /// <summary>
+        /// overrides the size enum 
+        /// </summary>
+        private Size size = Size.Small;
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
         /// <summary>
         /// Constructor if size needs to be set
         /// </summary>

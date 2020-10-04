@@ -22,12 +22,12 @@ namespace PointOfSale.DrinkUI
     /// <summary>
     /// Interaction logic for AretinoAppleJuice.xaml
     /// </summary>
-    public partial class AretinoAppleJuice : UserControl
+    public partial class AretinoAppleJuiceUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public AretinoAppleJuice()
+        public AretinoAppleJuiceUC()
         {
             InitializeComponent();
         }

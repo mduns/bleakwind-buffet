@@ -5,11 +5,13 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton : Entree, IOrderItem
+    public class SmokehouseSkeleton : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// returns the price of the Thalmor Triple
         /// </summary>
@@ -40,23 +42,58 @@ namespace BleakwindBuffet.Data.Entrees
                 return instructions;
             }
         }
-
+        private bool sausageLink = true;
         /// <summary>
         /// returns whether or not to have sausage links. Adds to special instructions if no sausage links
         /// </summary>
-        public bool SausageLink { get; set; } = true;
+        public bool SausageLink
+        {
+            get { return sausageLink; }
+            set
+            {
+                sausageLink = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SausageLink"));
+            }
+        }
+        private bool egg = true;
         /// <summary>
         /// returns whether or not to have eggs. Adds to special instructions if no egg.
         /// </summary>
-        public bool Egg { get; set; } = true;
+        public bool Egg
+        {
+            get { return egg; }
+            set
+            {
+                egg = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+            }
+        }
+        private bool hashBrowns = true;
         /// <summary>
         /// returns whether or not to have hashbrowns. Adds to special instructions if no hashbrowns.
         /// </summary>
-        public bool HashBrowns { get; set; } = true;
+        public bool HashBrowns
+        {
+            get { return hashBrowns; }
+            set
+            {
+                hashBrowns = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HashBrowns"));
+            }
+        }
+        private bool pancake = true;
         /// <summary>
         /// returns whether or not to have pancakes. Adds to special instructions if no pancake.
         /// </summary>
-        public bool Pancake { get; set; } = true;
+        public bool Pancake
+        {
+            get { return pancake; }
+            set
+            {
+                pancake = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
+            }
+        }
         /// <summary>
         /// overrides ToString method ot return "Smokehouse Skeleton"
         /// </summary>

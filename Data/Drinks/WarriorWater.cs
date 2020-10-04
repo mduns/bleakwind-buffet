@@ -6,6 +6,7 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Dynamic;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -13,8 +14,9 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// class for Warrior Water
     /// </summary>
-    public class WarriorWater : Drink, IOrderItem
+    public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// returns the price of Warrior Water
         /// </summary>
@@ -60,14 +62,48 @@ namespace BleakwindBuffet.Data.Drinks
                 return instructions;
             }
         }
+        private bool ice = true;
         /// <summary>
         /// returns whether or not to have Ice
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+            }
+        }
+        /// <summary>
+        /// backing variable for Lemon
+        /// </summary>
+        private bool lemon = false;
         /// <summary>
         /// returns whether or not to add lemon
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+            }
+        }
+
+        private Size size;
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
         /// <summary>
         /// constructor if size needs to be set
         /// </summary>

@@ -22,12 +22,12 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for ThalmorTriple.xaml
     /// </summary>
-    public partial class ThalmorTriple : UserControl
+    public partial class ThalmorTripleUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public ThalmorTriple()
+        public ThalmorTripleUC()
         {
             InitializeComponent();
         }

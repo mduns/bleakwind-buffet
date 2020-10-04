@@ -5,11 +5,13 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmelette : Entree, IOrderItem
+    public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// returns the price of the garden orc omelette
         /// </summary>
@@ -40,22 +42,58 @@ namespace BleakwindBuffet.Data.Entrees
                 return instructions;
             }
         }
+        private bool broccoli = true;
         /// <summary>
         /// returns whether or not to have broccoli.
         /// </summary>
-        public bool Broccoli { get; set; } = true;
+        public bool Broccoli
+        {
+            get { return broccoli; }
+            set
+            {
+                broccoli = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
+            }
+        }
+        private bool mushrooms = true;
         /// <summary>
         /// returns whether or not to have mushrooms.
         /// </summary>
-        public bool Mushrooms { get; set; } = true;
+        public bool Mushrooms
+        {
+            get { return mushrooms; }
+            set
+            {
+                mushrooms = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+            }
+        }
+        private bool tomato = true;
         /// <summary>
         /// returns whether or not to have tomato
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get { return tomato; }
+            set
+            {
+                tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+            }
+        }
+        private bool cheddar = true;
         /// <summary>
         /// returns whether or not to have cheddar.
         /// </summary>
-        public bool Cheddar { get; set; } = true;
+        public bool Cheddar
+        {
+            get { return cheddar; }
+            set
+            {
+                cheddar = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
+            }
+        }
         /// <summary>
         /// overrides to ToString method to return "Garden Orc Omelette"
         /// </summary>

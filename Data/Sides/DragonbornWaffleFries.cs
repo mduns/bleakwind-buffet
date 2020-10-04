@@ -6,6 +6,7 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Dynamic;
 
 namespace BleakwindBuffet.Data.Sides
@@ -13,8 +14,9 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// class for Dragaonborn Waffle Fries
     /// </summary>
-    public class DragonbornWaffleFries : Side, IOrderItem
+    public class DragonbornWaffleFries : Side, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// returns the price of Dragonborn Waffle Fries
         /// </summary>
@@ -45,6 +47,21 @@ namespace BleakwindBuffet.Data.Sides
                     case Size.Large: return 100;
                     default: throw new NotImplementedException("Should never be reached");
                 }
+            }
+        }
+        /// <summary>
+        /// overrides the size enum
+        /// </summary>
+        private Size size = Size.Small;
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             }
         }
         /// <summary>

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.EntreeUI.GardenOrcOmelette"
+﻿<UserControl x:Class="PointOfSale.EntreeUI.GardenOrcOmeletteUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -20,16 +20,16 @@
         <TextBlock Text="Garden Orc Omelette Customization" FontSize="30" Grid.ColumnSpan="3" FontFamily="Arial Rounded MT Bold" 
                    Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
-            <CheckBox Name="broccoli" IsChecked="True" HorizontalAlignment="Left">
+            <CheckBox Name="broccoli" IsChecked="{Binding Path=Broccoli}" HorizontalAlignment="Left">
                 <TextBlock Text="Broccoli" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
-            <CheckBox Name="mushroom" IsChecked="True" HorizontalAlignment="Left">
+            <CheckBox Name="mushroom" IsChecked="{Binding Path=Mushroom}" HorizontalAlignment="Left">
                 <TextBlock Text="Mushroom" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
-            <CheckBox Name="tomato" IsChecked="True" HorizontalAlignment="Left">
+            <CheckBox Name="tomato" IsChecked="{Binding Path=Tomato}" HorizontalAlignment="Left">
                 <TextBlock Text="Tomato" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
-            <CheckBox Name="cheddar" IsChecked="True" HorizontalAlignment="Left">
+            <CheckBox Name="cheddar" IsChecked="{Binding Path=Cheddar}" HorizontalAlignment="Left">
                 <TextBlock Text="Cheddar" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
         </StackPanel>

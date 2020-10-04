@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Drinks;
 
 namespace PointOfSale
 {
@@ -39,7 +40,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void aaButton_Click(object sender, RoutedEventArgs e)
         {
-            var aa = new AretinoAppleJuice();
+            var aa = new AretinoAppleJuiceUC();
+            aa.DataContext = new AretinoAppleJuice();
             this.Content = aa;
         }
         /// <summary>
@@ -49,7 +51,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ccButton_Click(object sender, RoutedEventArgs e)
         {
-            var cc = new CandlehearthCoffee();
+            var cc = new CandlehearthCoffeeUC();
+            cc.DataContext = new CandlehearthCoffee();
             this.Content = cc;
         }
         /// <summary>
@@ -59,7 +62,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void mmButton_Click(object sender, RoutedEventArgs e)
         {
-            var mm = new MarkarthMilk();
+            var mm = new MarkarthMilkUC();
+            mm.DataContext = new MarkarthMilk();
             this.Content = mm;
         }
         /// <summary>
@@ -69,7 +73,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void sailorButton_Click(object sender, RoutedEventArgs e)
         {
-            var sailor = new SailorSoda();
+            var sailor = new SailorSodaUC();
+            sailor.DataContext = new SailorSoda();
             this.Content = sailor;
         }
         /// <summary>
@@ -79,7 +84,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void wwButton_Click(object sender, RoutedEventArgs e)
         {
-            var ww = new WarriorWater();
+            var ww = new WarriorWaterUC();
+            ww.DataContext = new WarriorWater();
             this.Content = ww;
         }
         /// <summary>

@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Sides;
 
 namespace PointOfSale
 {
@@ -39,7 +40,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void dwfButton_Click(object sender, RoutedEventArgs e)
         {
-            var dwf = new DragonbornWaffleFries();
+            var dwf = new DragonbornWaffleFriesUC();
+            dwf.DataContext = new DragonbornWaffleFries();
             this.Content = dwf;
         }
         /// <summary>
@@ -49,7 +51,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void fmButton_Click(object sender, RoutedEventArgs e)
         {
-            var fm = new FriedMiraak();
+            var fm = new FriedMiraakUC();
+            fm.DataContext = new FriedMiraak();
             this.Content = fm;
         }
         /// <summary>
@@ -59,7 +62,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void mogButton_Click(object sender, RoutedEventArgs e)
         {
-            var mog = new MadOtarGrits();
+            var mog = new MadOtarGritsUC();
+            mog.DataContext = new MadOtarGrits();
             this.Content = mog;
         }
         /// <summary>
@@ -69,7 +73,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void vsButton_Click(object sender, RoutedEventArgs e)
         {
-            var vs = new VokunSalad();
+            var vs = new VokunSaladUC();
+            vs.DataContext = new VokunSalad();
             this.Content = vs;
         }
         /// <summary>

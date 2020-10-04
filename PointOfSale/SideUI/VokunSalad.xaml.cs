@@ -22,12 +22,12 @@ namespace PointOfSale.SideUI
     /// <summary>
     /// Interaction logic for VokunSalad.xaml
     /// </summary>
-    public partial class VokunSalad : UserControl
+    public partial class VokunSaladUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public VokunSalad()
+        public VokunSaladUC()
         {
             InitializeComponent();
         }

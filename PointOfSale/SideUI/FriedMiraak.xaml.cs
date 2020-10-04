@@ -22,12 +22,12 @@ namespace PointOfSale.SideUI
     /// <summary>
     /// Interaction logic for FriedMiraak.xaml
     /// </summary>
-    public partial class FriedMiraak : UserControl
+    public partial class FriedMiraakUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public FriedMiraak()
+        public FriedMiraakUC()
         {
             InitializeComponent();
         }

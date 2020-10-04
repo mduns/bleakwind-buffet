@@ -23,12 +23,12 @@ namespace PointOfSale.SideUI
     /// <summary>
     /// Interaction logic for DragonbornWaffleFries.xaml
     /// </summary>
-    public partial class DragonbornWaffleFries : UserControl
+    public partial class DragonbornWaffleFriesUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public DragonbornWaffleFries()
+        public DragonbornWaffleFriesUC()
         {
             InitializeComponent();
         }

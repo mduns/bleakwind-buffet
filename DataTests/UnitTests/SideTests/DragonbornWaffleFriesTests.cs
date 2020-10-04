@@ -89,5 +89,46 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             };
             Assert.Equal(name, dw.ToString());
         }
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            var dw = new DragonbornWaffleFries();
+            Assert.PropertyChanged(dw, "Size", () =>
+            {
+                dw.Size = Size.Small;
+            });
+            Assert.PropertyChanged(dw, "Size", () =>
+            {
+                dw.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(dw, "Size", () =>
+            {
+                dw.Size = Size.Large;
+            });
+        }
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var dw = new DragonbornWaffleFries();
+            Assert.PropertyChanged(dw, "Price", () =>
+            {
+                dw.Size = size;
+            });
+        }
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var dw = new DragonbornWaffleFries();
+            Assert.PropertyChanged(dw, "Calories", () =>
+            {
+                dw.Size = size;
+            });
+        }
     }
 }

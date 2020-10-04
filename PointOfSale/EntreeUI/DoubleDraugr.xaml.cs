@@ -22,12 +22,12 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for DoubleDraugr.xaml
     /// </summary>
-    public partial class DoubleDraugr : UserControl
+    public partial class DoubleDraugrUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public DoubleDraugr()
+        public DoubleDraugrUC()
         {
             InitializeComponent();
         }

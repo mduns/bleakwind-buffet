@@ -58,7 +58,7 @@
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
-            <TextBlock Text="Briarheart Burger" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White" TextWrapping="Wrap"/>
+            <TextBlock Text="Smokehouse Skeleton" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White" TextWrapping="Wrap"/>
         </Button>
         <Button Click="ttButton_Click" Name="ttButton" Margin="10" Grid.Column="1" Grid.Row ="3" Background="#512888">
             <Button.Resources>

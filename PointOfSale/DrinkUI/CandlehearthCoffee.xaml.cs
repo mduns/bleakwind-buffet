@@ -22,12 +22,12 @@ namespace PointOfSale.DrinkUI
     /// <summary>
     /// Interaction logic for CandlehearthCoffee.xaml
     /// </summary>
-    public partial class CandlehearthCoffee : UserControl
+    public partial class CandlehearthCoffeeUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public CandlehearthCoffee()
+        public CandlehearthCoffeeUC()
         {
             InitializeComponent();
         }

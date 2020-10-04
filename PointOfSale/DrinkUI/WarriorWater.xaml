@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.DrinkUI.WarriorWater"
+﻿<UserControl x:Class="PointOfSale.DrinkUI.WarriorWaterUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -20,10 +20,10 @@
         <TextBlock Text="Warrior Water Customization" FontSize="30" Grid.ColumnSpan="3" FontFamily="Arial Rounded MT Bold" 
                    Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="4">
-            <CheckBox Name="ice" IsChecked="True" HorizontalAlignment="Left">
+            <CheckBox Name="ice" IsChecked="{Binding Path=Ice}" HorizontalAlignment="Left">
                 <TextBlock Text="Ice" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
-            <CheckBox Name="lemon" IsChecked="False" HorizontalAlignment="Left">
+            <CheckBox Name="lemon" IsChecked="{Binding Path=Lemon}" HorizontalAlignment="Left">
                 <TextBlock Text="Lemon" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
         </StackPanel>

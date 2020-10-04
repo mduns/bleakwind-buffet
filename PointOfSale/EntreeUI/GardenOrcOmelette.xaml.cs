@@ -22,12 +22,12 @@ namespace PointOfSale.EntreeUI
     /// <summary>
     /// Interaction logic for GardenOrcOmelette.xaml
     /// </summary>
-    public partial class GardenOrcOmelette : UserControl
+    public partial class GardenOrcOmeletteUC : UserControl
     {
         /// <summary>
         /// Initializes the class
         /// </summary>
-        public GardenOrcOmelette()
+        public GardenOrcOmeletteUC()
         {
             InitializeComponent();
         }
