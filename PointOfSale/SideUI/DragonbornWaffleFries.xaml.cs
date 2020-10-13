@@ -33,16 +33,6 @@ namespace PointOfSale.SideUI
             InitializeComponent();
         }
         /// <summary>
-        /// Event handler for the backButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void backButton_Click(object sender, RoutedEventArgs e)
-        {
-            var side = new Sides();
-            this.Content = side;
-        }
-        /// <summary>
         /// Event handler for the doneButton
         /// </summary>
         /// <param name="sender"></param>

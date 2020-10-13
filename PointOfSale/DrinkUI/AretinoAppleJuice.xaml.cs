@@ -34,23 +34,6 @@ namespace PointOfSale.DrinkUI
             InitializeComponent();
         }
         /// <summary>
-        /// Event handler for the backButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void backButton_Click(object sender, RoutedEventArgs e)
-        {
-            DependencyObject parent = this;
-            do
-            {
-                parent = LogicalTreeHelper.GetParent(parent);
-            } while (!(parent is MainWindow) && !(parent is null));
-            if (parent is MainWindow main)
-            {
-                main.menuComponent.Child = new PickType();
-            }
-        }
-        /// <summary>
         /// Event handler for the doneButton
         /// </summary>
         /// <param name="sender"></param>

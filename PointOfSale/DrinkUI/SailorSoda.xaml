@@ -55,14 +55,6 @@
                 <TextBlock Text="Watermelon" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
         </StackPanel>
-        <Button Name="backButton" Margin="60,10" Grid.Column="0" Grid.Row ="5" Background="#512888" Click="backButton_Click">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </Button.Resources>
-            <TextBlock Text="Back" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White" />
-        </Button>
         <Button Name="doneButton" Margin="60,10" Grid.Column="2" Grid.Row ="8" Background="#512888" Click="doneButton_Click">
             <Button.Resources>
                 <Style TargetType="Border">

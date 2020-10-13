@@ -35,16 +35,6 @@ namespace PointOfSale.DrinkUI
             InitializeComponent();
         }
         /// <summary>
-        /// Event handler for the backButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void backButton_Click(object sender, RoutedEventArgs e)
-        {
-            var drink = new Drinks();
-            this.Content = drink;
-        }
-        /// <summary>
         /// event handler for the doneButton
         /// </summary>
         /// <param name="sender"></param>

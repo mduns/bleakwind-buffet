@@ -32,16 +32,6 @@ namespace PointOfSale
             InitializeComponent();
         }
         /// <summary>
-        /// Event handler for backButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void backButton_Click(object sender, RoutedEventArgs e)
-        {
-            var entree = new Entrees();
-            this.Content = entree;
-        }
-        /// <summary>
         /// event handler for doneButton
         /// </summary>
         /// <param name="sender"></param>
