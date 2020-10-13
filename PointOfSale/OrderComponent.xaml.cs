@@ -2,6 +2,8 @@
  * Class: OrderComponent.xaml.cs
  * Purpose: Handles input from the Order Component xaml
  */
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,39 @@ namespace PointOfSale
         public OrderComponent()
         {
             InitializeComponent();
+            
+        }
+        /// <summary>
+        /// Deletes the selected item from the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(items.SelectedValue is IOrderItem i)
+            {
+                if(DataContext is Order order)
+                {
+                    order.Remove(i);
+                }
+            }
+        }
+        /// <summary>
+        /// Creates a new order 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void newButton_Click(object sender, RoutedEventArgs e)
+        {
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main)
+            {
+                main.DataContext = new Order();
+            }
         }
     }
 }

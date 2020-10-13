@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -384,6 +385,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             {
                 tt.Egg = true;
             });
+        }
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            var tt = new ThalmorTriple();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tt);
         }
     }
 }

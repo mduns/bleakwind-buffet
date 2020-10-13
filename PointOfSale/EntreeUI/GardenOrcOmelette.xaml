@@ -23,7 +23,7 @@
             <CheckBox Name="broccoli" IsChecked="{Binding Path=Broccoli}" HorizontalAlignment="Left">
                 <TextBlock Text="Broccoli" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
-            <CheckBox Name="mushroom" IsChecked="{Binding Path=Mushroom}" HorizontalAlignment="Left">
+            <CheckBox Name="mushroom" IsChecked="{Binding Path=Mushrooms}" HorizontalAlignment="Left">
                 <TextBlock Text="Mushroom" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
             <CheckBox Name="tomato" IsChecked="{Binding Path=Tomato}" HorizontalAlignment="Left">

@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -129,6 +130,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             {
                 vs.Size = size;
             });
+        }
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            var vs = new VokunSalad();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(vs);
         }
     }
 }

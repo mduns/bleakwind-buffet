@@ -25,5 +25,12 @@ namespace BleakwindBuffet.Data.Entrees
         /// the special instructions to perform on the entree
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+        /// <summary>
+        /// Converts ToString to property instead of method so it can be bound in the GUI
+        /// </summary>
+        public string Name
+        {
+            get { return this.ToString(); }
+        }
     }
 }

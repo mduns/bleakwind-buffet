@@ -9,6 +9,7 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using System.Globalization;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -166,6 +167,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 aj.Size = size;
             });
+        }
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(aj);
         }
     }
 }

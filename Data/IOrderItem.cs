@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data
@@ -26,5 +27,7 @@ namespace BleakwindBuffet.Data
         /// the special instructions to be used on an entree, side, or drink
         /// </summary>
         List<string> SpecialInstructions { get; }
+
+        event PropertyChangedEventHandler PropertyChanged;
     }
 }

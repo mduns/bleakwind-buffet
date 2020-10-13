@@ -48,8 +48,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
-            var main = new PickType();
-            this.Content = main;
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main)
+            {
+                main.menuComponent.Child = new PickType();
+            }
         }
     }
 }

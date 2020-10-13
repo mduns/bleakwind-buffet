@@ -12,25 +12,42 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height=".2*"/>
             <RowDefinition Height=".2*"/>
             <RowDefinition Height=".2*"/>
             <RowDefinition Height=".35*"/>
         </Grid.RowDefinitions>
-        <ListBox Name="items" Grid.ColumnSpan="2" Grid.RowSpan="1" ScrollViewer.CanContentScroll="True"/>
-        <TextBox Name="total" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Left" FontSize="15" Text="Total: $"/>
-        <TextBox Name="tax" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Left" FontSize="15" Text="Tax: $"/>
-        <TextBox Name="subtotal" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left" FontSize="15" Text="Subtotal: $"/>
-        <Button Name="payButton" Grid.Column="1" Grid.Row ="4" Background="#512888">
+        <ListView Name="items" Grid.ColumnSpan="2" Grid.RowSpan="1" Grid.Row="1" ScrollViewer.CanContentScroll="True" ItemsSource="{Binding}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Name}"/>
+                        <TextBlock Text="{Binding Path=Price, StringFormat={}{0:C2}}"/>
+                        <StackPanel>
+                            <ListView ItemsSource="{Binding Path=SpecialInstructions}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox Name="orderNum" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Center" FontSize="15" Text="{Binding Path=Number, Mode=OneWay, StringFormat=Order Number: {0:#}}"/>
+        <TextBox Name="total" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="4" HorizontalAlignment="Left" FontSize="15" Text="Total:"/>
+        <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" IsReadOnly="True" Text="{Binding Path=Subtotal, Mode=OneWay, StringFormat={}{0:C2}}"/>
+        <TextBox Name="tax" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Left" FontSize="15" Text="Tax:"/>
+        <TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" IsReadOnly="True" Text="{Binding Path=Tax, Mode=OneWay, StringFormat={}{0:C2}}"/>
+        <TextBox Name="subtotal" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Left" FontSize="15" Text="Subtotal:"/>
+        <TextBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" IsReadOnly="True" Text="{Binding Path=Total, Mode=OneWay, StringFormat={}{0:C2}}"/>
+        <Button Name="newButton" Grid.Column="1" Grid.Row ="5" Background="#512888" Click="newButton_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
-            <TextBlock Text="Pay" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White" />
+            <TextBlock Text="New" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White" />
         </Button>
-        <Button Name="deleteButton" Grid.Column="0" Grid.Row ="4" Background="#512888">
+        <Button Name="deleteButton" Click="deleteButton_Click" Grid.Column="0" Grid.Row ="5" Background="#512888">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>

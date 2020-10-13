@@ -9,8 +9,9 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThugsTBone : Entree, IOrderItem
+    public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// returns the price of the thugs t bone
         /// </summary>

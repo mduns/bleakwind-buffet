@@ -25,13 +25,13 @@
             </CheckBox>
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <RadioButton Name="small" GroupName="Size" Grid.Column="0" Grid.Row="1" IsChecked="True">
+            <RadioButton Name="small" GroupName="Size" Checked="size_Checked" Grid.Column="0" Grid.Row="1">
                 <TextBlock Text="Small" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
-            <RadioButton Name="medium" GroupName="Size" Grid.Column="0" Grid.Row="1">
+            <RadioButton Name="medium" GroupName="Size" Checked="size_Checked" Grid.Column="0" Grid.Row="1">
                 <TextBlock Text="Medium" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
-            <RadioButton Name="large" GroupName="Size" Grid.Column="0" Grid.Row="1">
+            <RadioButton Name="large" GroupName="Size" Checked="size_Checked" Grid.Column="0" Grid.Row="1">
                 <TextBlock Text="Large" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
         </StackPanel>

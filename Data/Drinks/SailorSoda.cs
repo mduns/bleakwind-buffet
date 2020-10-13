@@ -70,6 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -77,13 +78,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// returns the Soda Flavor (default cherry)
         /// </summary>
-        public SodaFlavor Flavor
+        public override SodaFlavor Flavor
         {
             get { return flavor; }
             set 
             { 
                 flavor = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
             }
         }
         /// <summary>
@@ -99,6 +101,7 @@ namespace BleakwindBuffet.Data.Drinks
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
             }
         }
         /// <summary>

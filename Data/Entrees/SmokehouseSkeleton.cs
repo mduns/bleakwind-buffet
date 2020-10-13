@@ -53,6 +53,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 sausageLink = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SausageLink"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         private bool egg = true;
@@ -66,6 +67,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 egg = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         private bool hashBrowns = true;
@@ -79,6 +81,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 hashBrowns = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HashBrowns"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         private bool pancake = true;
@@ -92,6 +95,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pancake = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         /// <summary>

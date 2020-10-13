@@ -20,7 +20,7 @@
         <TextBlock Text="Smokehouse Skeleton Customization" FontSize="30" Grid.ColumnSpan="3" FontFamily="Arial Rounded MT Bold" 
                    Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2">
-            <CheckBox Name="sausage" IsChecked="{Binding Path=Sausage}" HorizontalAlignment="Left">
+            <CheckBox Name="sausage" IsChecked="{Binding Path=SausageLink}" HorizontalAlignment="Left">
                 <TextBlock Text="Sausage" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </CheckBox>
             <CheckBox Name="egg" IsChecked="{Binding Path=Egg}" HorizontalAlignment="Left">

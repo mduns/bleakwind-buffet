@@ -2,6 +2,7 @@
  * Class: MainWindow.xaml.cs
  * Purpose: Handles user input for the MainWindow xaml
  */
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new Order();
         }
     }
 }

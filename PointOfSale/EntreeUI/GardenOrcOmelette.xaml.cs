@@ -2,6 +2,7 @@
  * Class: GardenOrcOmelette.xaml.cs
  * Purpose: Handles user input for the garden orc omelette xaml
  */
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,8 +39,15 @@ namespace PointOfSale.EntreeUI
         /// <param name="e"></param>
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
-            var entree = new Entrees();
-            this.Content = entree;
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main)
+            {
+                main.menuComponent.Child = new Entrees();
+            }
         }
         /// <summary>
         /// Event handler for the doneButton
@@ -48,8 +56,15 @@ namespace PointOfSale.EntreeUI
         /// <param name="e"></param>
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
-            var main = new PickType();
-            this.Content = main;
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main)
+            {
+                main.menuComponent.Child = new PickType();
+            }
         }
     }
 }

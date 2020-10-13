@@ -25,33 +25,33 @@
             </CheckBox>
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="1" Name="Size">
-            <RadioButton Name="small" GroupName="Size" Grid.Column="0" Grid.Row="1" IsChecked="True">
+            <RadioButton Name="small" GroupName="Size" Checked="size_Checked" Grid.Column="0" Grid.Row="1">
                 <TextBlock Text="Small" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
-            <RadioButton Name="medium" GroupName="Size" Grid.Column="0" Grid.Row="1">
+            <RadioButton Name="medium" GroupName="Size" Checked="size_Checked" Grid.Column="0" Grid.Row="1">
                 <TextBlock Text="Medium" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
-            <RadioButton Name="large" GroupName="Size" Grid.Column="0" Grid.Row="1">
+            <RadioButton Name="large" GroupName="Size" Checked="size_Checked" Grid.Column="0" Grid.Row="1">
                 <TextBlock Text="Large" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
-            <RadioButton Name="blackberry" GroupName="Size" IsChecked="False" HorizontalAlignment="Left">
+            <RadioButton Name="blackberry" Checked="flavor_Checked" HorizontalAlignment="Left">
                 <TextBlock Text="Blackberry" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
-            <RadioButton GroupName="Size" Name="cherry" IsChecked="True" HorizontalAlignment="Left">
+            <RadioButton Name="cherry" Checked="flavor_Checked" HorizontalAlignment="Left">
                 <TextBlock Text="Cherry" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
-            <RadioButton Name="grapefruit" GroupName="Size" IsChecked="False" HorizontalAlignment="Left">
+            <RadioButton Name="grapefruit" Checked="flavor_Checked" HorizontalAlignment="Left">
                 <TextBlock Text="Grapefruit" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
-            <RadioButton Name="lemon" GroupName="Size" IsChecked="False" HorizontalAlignment="Left">
+            <RadioButton Name="lemon" Checked="flavor_Checked" HorizontalAlignment="Left">
                 <TextBlock Text="Lemon" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
-            <RadioButton Name="peach" GroupName="Size" IsChecked="False" HorizontalAlignment="Left">
+            <RadioButton Name="peach" Checked="flavor_Checked" HorizontalAlignment="Left">
                 <TextBlock Text="Peach" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
-            <RadioButton Name="watermelon" GroupName="Size" IsChecked="False" HorizontalAlignment="Left">
+            <RadioButton Name="watermelon" Checked="flavor_Checked" HorizontalAlignment="Left">
                 <TextBlock Text="Watermelon" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="#512888"/>
             </RadioButton>
         </StackPanel>

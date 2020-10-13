@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -40,9 +41,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void bbButton_Click(object sender, RoutedEventArgs e)
         {
-            var bb = new BriarheartBurgerUC();
-            bb.DataContext = new BriarheartBurger();
-            this.Content = bb;
+            var bbUC = new BriarheartBurgerUC();
+            var bb = new BriarheartBurger();
+            bbUC.DataContext = bb;
+            this.Content = bbUC;
+            if(DataContext is Order order)
+            {
+                order.Add(bb);
+            }
         }
         /// <summary>
         /// Event handler for the Double Draugr button
@@ -51,9 +57,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ddButton_Click(object sender, RoutedEventArgs e)
         {
-            var dd = new DoubleDraugrUC();
-            dd.DataContext = new DoubleDraugr();
-            this.Content = dd;
+            var ddUC = new DoubleDraugrUC();
+            var dd = new DoubleDraugr();
+            ddUC.DataContext = dd;
+            this.Content = ddUC;
+            if(DataContext is Order order)
+            {
+                order.Add(dd);
+            }
         }
         /// <summary>
         /// Event handler for the Garden Orc omelette button 
@@ -62,9 +73,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void gocButton_Click(object sender, RoutedEventArgs e)
         {
-            var goc = new GardenOrcOmeletteUC();
-            goc.DataContext = new GardenOrcOmelette();
-            this.Content = goc;
+            var goUC = new GardenOrcOmeletteUC();
+            var go = new GardenOrcOmelette();
+            goUC.DataContext = go;
+            this.Content = goUC;
+            if(DataContext is Order order)
+            {
+                order.Add(go);
+            }
         }
         /// <summary>
         /// Event handler for the philly poacher button 
@@ -73,9 +89,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ppButton_Click(object sender, RoutedEventArgs e)
         {
-            var pp = new PhillyPoacherUC();
-            pp.DataContext = new PhillyPoacher();
-            this.Content = pp;
+            var ppUC = new PhillyPoacherUC();
+            var pp = new PhillyPoacher();
+            ppUC.DataContext = pp;
+            this.Content = ppUC;
+            if (DataContext is Order order)
+            {
+                order.Add(pp);
+            }
         }
         /// <summary>
         /// Event handler for the smokehouse skeleton button
@@ -84,9 +105,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ssButton_Click(object sender, RoutedEventArgs e)
         {
-            var ss = new SmokehouseSkeletonUC();
-            ss.DataContext = new SmokehouseSkeleton();
-            this.Content = ss;
+            var ssUC = new SmokehouseSkeletonUC();
+            var ss = new SmokehouseSkeleton();
+            ssUC.DataContext = ss;
+            this.Content = ssUC;
+            if (DataContext is Order order)
+            {
+                order.Add(ss);
+            }
         }
         /// <summary>
         /// Event handler for the thalmor triple button 
@@ -95,9 +121,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ttButton_Click(object sender, RoutedEventArgs e)
         {
-            var tt = new ThalmorTripleUC();
-            tt.DataContext = new ThalmorTriple();
-            this.Content = tt;
+            var ttUC = new ThalmorTripleUC();
+            var tt = new ThalmorTriple();
+            ttUC.DataContext = tt;
+            this.Content = ttUC;
+            if (DataContext is Order order)
+            {
+                order.Add(tt);
+            }
         }
         /// <summary>
         /// Event handler for the thugs t bone button 
@@ -106,9 +137,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ttbButton_Click(object sender, RoutedEventArgs e)
         {
-            var ttb = new ThugsTBoneUC();
-            ttb.DataContext = new ThugsTBone();
-            this.Content = ttb;
+            var ttbUC = new ThugsTBoneUC();
+            var ttb = new ThugsTBone();
+            ttbUC.DataContext = ttb;
+            this.Content = ttbUC;
+            if (DataContext is Order order)
+            {
+                order.Add(ttb);
+            }
         }
         /// <summary>
         /// Event handler for the backButton
@@ -117,8 +153,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
-            var back = new PickType();
-            this.Content = back;
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main)
+            {
+                main.menuComponent.Child = new PickType();
+            }
         }
     }
 }

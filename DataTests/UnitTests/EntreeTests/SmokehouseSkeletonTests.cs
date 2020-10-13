@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System.Runtime.InteropServices;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -164,6 +165,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             {
                 ss.Egg = true;
             });
+        }
+        [Fact]
+        public void ShouldBeAnINotifyPropertyChanged()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ss);
         }
     }
 }

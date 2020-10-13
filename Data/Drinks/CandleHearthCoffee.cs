@@ -72,6 +72,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -86,6 +87,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 roomForCream = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         /// <summary>
@@ -101,12 +103,23 @@ namespace BleakwindBuffet.Data.Drinks
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
             }
         }
+        private bool decaf = false;
         /// <summary>
         /// returns whether or not to have decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
         /// constructor if size needs to be set 
         /// </summary>

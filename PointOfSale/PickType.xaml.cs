@@ -2,6 +2,7 @@
  * Class: PickType.xaml.cs
  * Purpose: Handles user input for the Pick type xaml
  */
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;

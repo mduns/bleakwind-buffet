@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -40,9 +41,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void aaButton_Click(object sender, RoutedEventArgs e)
         {
-            var aa = new AretinoAppleJuiceUC();
-            aa.DataContext = new AretinoAppleJuice();
-            this.Content = aa;
+            var aaUC = new AretinoAppleJuiceUC();
+            var aa = new AretinoAppleJuice();
+            aaUC.DataContext = aa;
+            this.Content = aaUC;
+            if (DataContext is Order order)
+            {
+                order.Add(aa);
+            }
         }
         /// <summary>
         /// Event handler for the candlehearth coffee button 
@@ -51,9 +57,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ccButton_Click(object sender, RoutedEventArgs e)
         {
-            var cc = new CandlehearthCoffeeUC();
-            cc.DataContext = new CandlehearthCoffee();
-            this.Content = cc;
+            var ccUC = new CandlehearthCoffeeUC();
+            var cc = new CandlehearthCoffee();
+            ccUC.DataContext = cc;
+            this.Content = ccUC;
+            if (DataContext is Order order)
+            {
+                order.Add(cc);
+            }
         }
         /// <summary>
         /// Event handler for the markarth milk button 
@@ -62,9 +73,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void mmButton_Click(object sender, RoutedEventArgs e)
         {
-            var mm = new MarkarthMilkUC();
-            mm.DataContext = new MarkarthMilk();
-            this.Content = mm;
+            var mmUC = new MarkarthMilkUC();
+            var mm = new MarkarthMilk();
+            mmUC.DataContext = mm;
+            this.Content = mmUC;
+            if (DataContext is Order order)
+            {
+                order.Add(mm);
+            }
         }
         /// <summary>
         /// Event handler for the Sailor Soda button 
@@ -73,9 +89,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void sailorButton_Click(object sender, RoutedEventArgs e)
         {
-            var sailor = new SailorSodaUC();
-            sailor.DataContext = new SailorSoda();
-            this.Content = sailor;
+            var ssUC = new SailorSodaUC();
+            var ss = new SailorSoda();
+            ssUC.DataContext = ss;
+            this.Content = ssUC;
+            if (DataContext is Order order)
+            {
+                order.Add(ss);
+            }
         }
         /// <summary>
         /// Event handler for the warrior water button 
@@ -84,9 +105,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void wwButton_Click(object sender, RoutedEventArgs e)
         {
-            var ww = new WarriorWaterUC();
-            ww.DataContext = new WarriorWater();
-            this.Content = ww;
+            var wwUC = new WarriorWaterUC();
+            var ww = new WarriorWater();
+            wwUC.DataContext = ww;
+            this.Content = wwUC;
+            if (DataContext is Order order)
+            {
+                order.Add(ww);
+            }
         }
         /// <summary>
         /// event handler for the backButton
@@ -95,8 +121,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
-            var back = new PickType();
-            this.Content = back;
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main)
+            {
+                main.menuComponent.Child = new PickType();
+            }
         }
     }
 }

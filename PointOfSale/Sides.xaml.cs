@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data.Sides;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -40,9 +41,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void dwfButton_Click(object sender, RoutedEventArgs e)
         {
-            var dwf = new DragonbornWaffleFriesUC();
-            dwf.DataContext = new DragonbornWaffleFries();
-            this.Content = dwf;
+            var dwUC = new DragonbornWaffleFriesUC();
+            var dw = new DragonbornWaffleFries();
+            dwUC.DataContext = dw;
+            this.Content = dwUC;
+            if (DataContext is Order order)
+            {
+                order.Add(dw);
+            }
         }
         /// <summary>
         /// Event handler for the fried miraak button
@@ -51,9 +57,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void fmButton_Click(object sender, RoutedEventArgs e)
         {
-            var fm = new FriedMiraakUC();
-            fm.DataContext = new FriedMiraak();
-            this.Content = fm;
+            var fmUC = new FriedMiraakUC();
+            var fm = new FriedMiraak();
+            fmUC.DataContext = fm;
+            this.Content = fmUC;
+            if (DataContext is Order order)
+            {
+                order.Add(fm);
+            }
         }
         /// <summary>
         /// event handler for the mad otar grits button 
@@ -62,9 +73,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void mogButton_Click(object sender, RoutedEventArgs e)
         {
-            var mog = new MadOtarGritsUC();
-            mog.DataContext = new MadOtarGrits();
-            this.Content = mog;
+            var moUC = new MadOtarGritsUC();
+            var mo = new MadOtarGrits();
+            moUC.DataContext = mo;
+            this.Content = moUC;
+            if (DataContext is Order order)
+            {
+                order.Add(mo);
+            }
         }
         /// <summary>
         /// event handler for the vokun salad button 
@@ -73,9 +89,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void vsButton_Click(object sender, RoutedEventArgs e)
         {
-            var vs = new VokunSaladUC();
-            vs.DataContext = new VokunSalad();
-            this.Content = vs;
+            var vsUC = new VokunSaladUC();
+            var vs = new VokunSalad();
+            vsUC.DataContext = vs;
+            this.Content = vsUC;
+            if (DataContext is Order order)
+            {
+                order.Add(vs);
+            }
         }
         /// <summary>
         /// event handler for the backButton
@@ -84,8 +105,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
-            var back = new PickType();
-            this.Content = back;
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            } while (!(parent is MainWindow) && !(parent is null));
+            if (parent is MainWindow main)
+            {
+                main.menuComponent.Child = new PickType();
+            }
         }
     }
 }

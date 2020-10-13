@@ -11,9 +11,11 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <local:PickType Grid.Column="0"/>
-        <local:OrderComponent Grid.Column="1"/>
-        <Border Name="menuComponent" Grid.Column="0"></Border>
-        <Border Name="orderComponent" Grid.Column="1"></Border>
+        <Border Name="menuComponent" Grid.Column="0">
+            <local:PickType Grid.Column="0"/>
+        </Border>
+        <Border Name="orderComponent" Grid.Column="1">
+            <local:OrderComponent Grid.Column="1"/>
+        </Border>
     </Grid>
 </Window>
