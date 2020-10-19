@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RoundRegister">
+      <HintPath>..\RoundRegister.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,6 +58,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CashPayment.xaml.cs">
+      <DependentUpon>CashPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComboUC.xaml.cs">
+      <DependentUpon>ComboUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyControl.xaml.cs">
+      <DependentUpon>CurrencyControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DrinkUI\AretinoAppleJuice.xaml.cs">
       <DependentUpon>AretinoAppleJuice.xaml</DependentUpon>
     </Compile>
@@ -91,6 +103,9 @@
     <Compile Include="OrderComponent.xaml.cs">
       <DependentUpon>OrderComponent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PaymentScreen.xaml.cs">
+      <DependentUpon>PaymentScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sides.xaml.cs">
       <DependentUpon>Sides.xaml</DependentUpon>
     </Compile>
@@ -109,6 +124,18 @@
     <Compile Include="SideUI\VokunSalad.xaml.cs">
       <DependentUpon>VokunSalad.xaml</DependentUpon>
     </Compile>
+    <Page Include="CashPayment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComboUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CurrencyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DrinkUI\AretinoAppleJuice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -180,6 +207,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="OrderComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PaymentScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

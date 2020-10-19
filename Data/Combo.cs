@@ -28,7 +28,6 @@ namespace BleakwindBuffet.Data
             get
             {
                 calories = drink.Calories + side.Calories + entree.Calories;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 return calories;
             }
         }
@@ -41,7 +40,6 @@ namespace BleakwindBuffet.Data
             get
             {
                 price = drink.Price + side.Price + entree.Price - 1;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 return price;
             }
         }
@@ -66,6 +64,10 @@ namespace BleakwindBuffet.Data
                     {
                         SpecialInstructions.Remove(i);
                     }
+                    if(drink is IOrderItem item)
+                    {
+                        item.PropertyChanged -= OnItemChanged;
+                    }
                 }
                 drink = value;
                 SpecialInstructions.Add(drink.ToString());
@@ -73,10 +75,10 @@ namespace BleakwindBuffet.Data
                 {
                     SpecialInstructions.Add(j);
                 }
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Drink"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                if(drink is IOrderItem item1)
+                {
+                    item1.PropertyChanged += OnItemChanged;
+                }
             }
         }
         /// <summary>
@@ -95,6 +97,10 @@ namespace BleakwindBuffet.Data
                     {
                         SpecialInstructions.Remove(i);
                     }
+                    if(side is IOrderItem item)
+                    {
+                        item.PropertyChanged -= OnItemChanged;
+                    }
                 }
                 side = value;
                 SpecialInstructions.Add(side.ToString());
@@ -102,10 +108,11 @@ namespace BleakwindBuffet.Data
                 {
                     SpecialInstructions.Add(j);
                 }
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Side"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                if(side is IOrderItem item1)
+                {
+                    item1.PropertyChanged += OnItemChanged;
+                }
+                OnItemChanged(null, null);
             }
         }
         /// <summary>
@@ -124,6 +131,10 @@ namespace BleakwindBuffet.Data
                     {
                         SpecialInstructions.Remove(i);
                     }
+                    if(entree is IOrderItem item)
+                    {
+                        item.PropertyChanged -= OnItemChanged;
+                    }
                 }
                 entree = value;
                 SpecialInstructions.Add(entree.ToString());
@@ -131,12 +142,36 @@ namespace BleakwindBuffet.Data
                 {
                     SpecialInstructions.Add(j);
                 }
-                entree = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Entree"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                if(entree is IOrderItem item1)
+                {
+                    item1.PropertyChanged += OnItemChanged;
+                }
+                OnItemChanged(null, null);
             }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return "Combo";
+            }
+        }
+
+        public override string ToString()
+        {
+            return "Combo";
+        }
+        private void OnItemChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Entree"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Side"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Drink"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Entree"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
         }
     }
 }

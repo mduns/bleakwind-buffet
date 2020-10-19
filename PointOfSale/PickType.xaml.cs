@@ -63,5 +63,12 @@ namespace PointOfSale
             var sides = new Sides();
             this.Content = sides;
         }
+
+        private void comboButton_Click(object sender, RoutedEventArgs e)
+        {
+            var combo = new ComboUC();
+            this.Content = combo;
+            this.DataContext = new Combo();
+        }
     }
 }

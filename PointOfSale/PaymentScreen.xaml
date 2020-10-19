@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.PickType"
+﻿<UserControl x:Class="PointOfSale.PaymentScreen"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,45 +11,36 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Bleakwind Buffet" FontSize="30" Grid.ColumnSpan="4" FontFamily="Arial Rounded MT Bold" 
+        <TextBlock Text="Payment Options" FontSize="30" Grid.ColumnSpan="3" FontFamily="Arial Rounded MT Bold" 
                    Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
-        <Button Click="entreeButton_Click" Name="entreeButton" Margin="10" Grid.Column="0" Grid.Row ="1" Background="#512888">
+        <Button Click="backButton_Click" Name="backToOrderButton" Margin="10" Grid.Column="0" Grid.Row ="1" Background="#512888">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
-            <TextBlock Text="Entrees" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="White" />
+            <TextBlock Text="Return to Order" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="White" TextWrapping="Wrap" />
         </Button>
-        <Button Click="drinkButton_Click" Name="drinkButton" Margin="10" Grid.Column="1"  Grid.Row ="1" Background="#512888">
+        <Button  Click="paymentClick" Name="cardButton" Margin="10" Grid.Column="1"  Grid.Row ="1" Background="#512888">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
-            <TextBlock Text="Drinks" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="White" />
+            <TextBlock Text="Credit/Debit" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="White" TextWrapping="Wrap" />
         </Button>
-        <Button Click="sideButton_Click" Name="sideButton" Margin="10" Grid.Column="2"  Grid.Row ="1" Background="#512888">
+        <Button  Click="cashClick" Name="cashButton" Margin="10" Grid.Column="2"  Grid.Row ="1" Background="#512888">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
-            <TextBlock Text="Sides" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="White" />
-        </Button>
-        <Button Click="comboButton_Click" Name="comboButton" Margin="10" Grid.Column="3"  Grid.Row ="1" Background="#512888">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </Button.Resources>
-            <TextBlock Text="Combos" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="White" />
+            <TextBlock Text="Cash" FontSize="30" FontFamily="Arial Rounded MT Bold" Foreground="White" TextWrapping="Wrap"/>
         </Button>
         <Border Name="menu" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
     </Grid>

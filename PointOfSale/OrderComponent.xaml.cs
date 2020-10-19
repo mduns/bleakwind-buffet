@@ -54,7 +54,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void newButton_Click(object sender, RoutedEventArgs e)
+        private void payButton_Click(object sender, RoutedEventArgs e)
         {
             DependencyObject parent = this;
             do
@@ -63,7 +63,7 @@ namespace PointOfSale
             } while (!(parent is MainWindow) && !(parent is null));
             if (parent is MainWindow main)
             {
-                main.DataContext = new Order();
+                main.menuComponent.Child = new PaymentScreen();
             }
         }
     }

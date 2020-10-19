@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="PointOfSale.CashPayment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.3*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Change Given" FontSize="15" Grid.Column="2" TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" 
+                   Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
+        <TextBlock Text="Change Given" FontSize="15" Grid.Column="7" TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" 
+                   Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
+        <TextBlock Text="Change Owed" FontSize="15" Grid.Column="4" TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" 
+                   Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
+        <TextBlock Text="Change Owed" FontSize="15" Grid.Column="9" TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" 
+                   Grid.Row="0" TextAlignment="Center" Foreground="#512888"></TextBlock>
+        <TextBlock Text="Total:" FontSize="20" Grid.Column="0" TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" 
+                   Grid.Row="7" Grid.RowSpan="2" TextAlignment="Center" Foreground="#512888" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="{Binding Path=TotalDue, StringFormat={}{0:C2}}" FontSize="20" Grid.Column="1" TextWrapping="Wrap"
+                   Grid.Row="7" Grid.RowSpan="2" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Amount Owed:" FontSize="20" Grid.Column="2" TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" 
+                   Grid.Row="7" Grid.RowSpan="2" TextAlignment="Center" Foreground="#512888" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Name="amountOwed" Text="{Binding Path=AmountOwed, StringFormat={}{0:C2}}" FontSize="20" Grid.Column="3" TextWrapping="Wrap"
+                   Grid.Row="7" Grid.RowSpan="2" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Change Due:" FontSize="20" Grid.Column="4" TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" 
+                   Grid.Row="7" Grid.RowSpan="2" TextAlignment="Center" Foreground="#512888" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Name="changeDue" Text="{Binding Path=ChangeDue, StringFormat={}{0:C2}}" FontSize="20" Grid.Column="5" TextWrapping="Wrap"
+                   Grid.Row="7" Grid.RowSpan="2" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="$100"  Grid.Row="1" FontSize="20" Background="#512888" Foreground="White"  Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$50"  Grid.Row="2" FontSize="20" Background="#512888" Foreground="White"   Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$20"  Grid.Row="3" FontSize="20" Background="#512888" Foreground="White"   Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$10"  Grid.Row="4" FontSize="20" Background="#512888" Foreground="White"   Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$5"  Grid.Row="5" FontSize="20" Background="#512888" Foreground="White"    Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$1"  Grid.Row="6" FontSize="20" Background="#512888" Foreground="White"    Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$0.50"  Grid.Row="1" Grid.Column="5" FontSize="20" Background="#512888" Foreground="White"  Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$0.25"  Grid.Row="2" Grid.Column="5" FontSize="20" Background="#512888" Foreground="White"  Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$0.10"  Grid.Row="3" Grid.Column="5" FontSize="20" Background="#512888" Foreground="White"  Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$0.05"  Grid.Row="4" Grid.Column="5" FontSize="20" Background="#512888" Foreground="White"  Margin="5" TextAlignment="Center"/>
+        <TextBlock Text="$0.01"  Grid.Row="5" Grid.Column="5" FontSize="20" Background="#512888" Foreground="White" Margin="5" TextAlignment="Center"/>
+        <Button Name="hundredPlus"  Click="Plus_Click" Grid.Row="1" Grid.Column="1" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="fiftyPlus"  Click="Plus_Click" Grid.Row="2" Grid.Column="1" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="twentyPlus" Click="Plus_Click" Grid.Row="3" Grid.Column="1" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="tenPlus" Click="Plus_Click" Grid.Row="4" Grid.Column="1" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="fivePlus" Click="Plus_Click" Grid.Row="5" Grid.Column="1" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="onePlus" Click="Plus_Click" Grid.Row="6" Grid.Column="1" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="fiftyCentPlus" Click="Plus_Click" Grid.Row="1" Grid.Column="6" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="twentyFiveCentPlus" Click="Plus_Click" Grid.Row="2" Grid.Column="6" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="tenCentPlus" Click="Plus_Click" Grid.Row="3" Grid.Column="6" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="fiveCentPlus" Click="Plus_Click" Grid.Row="4" Grid.Column="6" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="oneCentPlus" Click="Plus_Click" Grid.Row="5" Grid.Column="6" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="+" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="hundredMinus" Click="Minus_Click" IsEnabled ="False" Grid.Row="1" Grid.Column="3" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="fiftyMinus" Click="Minus_Click" IsEnabled="False" Grid.Row="2" Grid.Column="3" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="twentyMinus" Click="Minus_Click" IsEnabled="False" Grid.Row="3" Grid.Column="3" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="tenMinus" Click="Minus_Click" IsEnabled="False" Grid.Row="4" Grid.Column="3" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="fiveMinus" Click="Minus_Click" IsEnabled="False" Grid.Row="5" Grid.Column="3" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="oneMinus" Click="Minus_Click" IsEnabled="False" Grid.Row="6" Grid.Column="3" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="fiftyCentMinus" Click="Minus_Click" IsEnabled="False" Grid.Row="1" Grid.Column="8" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="twentyFiveCentMinus" Click="Minus_Click"  IsEnabled="False" Grid.Row="2" Grid.Column="8" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="tenCentMinus" Click="Minus_Click" IsEnabled="False" Grid.Row="3" Grid.Column="8" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="fiveCentMinus" Click="Minus_Click" IsEnabled="False" Grid.Row="4" Grid.Column="8" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="oneCentMinus" Click="Minus_Click" IsEnabled="False" Grid.Row="5" Grid.Column="8" Background="#512888" Foreground="White"  Margin="5">
+            <TextBlock Text="-" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <TextBlock Name="hundred" Grid.Row="1" Grid.Column="2" Text="{Binding Path=HundredAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="fifty" Grid.Row="2" Grid.Column="2" Text="{Binding Path=FiftyAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="twenty" Grid.Row="3" Grid.Column="2" Text="{Binding Path=TwentyAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="ten" Grid.Row="4" Grid.Column="2" Text="{Binding Path=TenAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="five" Grid.Row="5" Grid.Column="2" Text="{Binding Path=FiveAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="one" Grid.Row="6" Grid.Column="2" Text="{Binding Path=OneAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+        <TextBlock Name="fiftyCent" Grid.Row="1" Grid.Column="7" Text="{Binding Path=FiftyCentAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="twentyFiveCent" Grid.Row="2" Grid.Column="7" Text="{Binding Path=TwentyFiveCentAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="tenCent" Grid.Row="3" Grid.Column="7" Text="{Binding Path=TenCentAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="fiveCent" Grid.Row="4" Grid.Column="7" Text="{Binding Path=FiveCentAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="oneCent" Grid.Row="5" Grid.Column="7" Text="{Binding Path=OneCentAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+
+        <TextBlock Name="hundredChange" Grid.Row="1" Grid.Column="4" Text="{Binding Path=HundredChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="fiftyChange" Grid.Row="2" Grid.Column="4" Text="{Binding Path=FiftyChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="twentyChange" Grid.Row="3" Grid.Column="4" Text="{Binding Path=TwentyChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="tenChange" Grid.Row="4" Grid.Column="4" Text="{Binding Path=TenChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="fiveChange" Grid.Row="5" Grid.Column="4" Text="{Binding Path=FiveChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="oneChange" Grid.Row="6" Grid.Column="4" Text="{Binding Path=OneChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+        <TextBlock Name="fiftyCentChange" Grid.Row="1" Grid.Column="9" Text="{Binding Path=FiftyCentChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="twentyFiveCentChange" Grid.Row="2" Grid.Column="9" Text="{Binding Path=TwentyFiveCentChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="tenCentChange" Grid.Row="3" Grid.Column="9" Text="{Binding Path=TenCentChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="fiveCentChange" Grid.Row="4" Grid.Column="9" Text="{Binding Path=FiveCentChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Name="oneCentChange" Grid.Row="5" Grid.Column="9" Text="{Binding Path=OneCentChangeAmount}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Button Name="finalize" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="3" Background="#512888" Foreground="White"  Margin="5" Click="finalize_Click">
+            <TextBlock Text="Finalize Sale" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+        <Button Name="back" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="#512888" Foreground="White"  Margin="5" Click="back_Click">
+            <TextBlock Text="Return" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+    </Grid>
+</UserControl>

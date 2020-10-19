@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale.SideUI
 {
@@ -43,10 +44,22 @@ namespace PointOfSale.SideUI
             do
             {
                 parent = LogicalTreeHelper.GetParent(parent);
-            } while (!(parent is MainWindow) && !(parent is null));
+            } while ((!(parent is MainWindow) && !(parent is null)) && !(parent is ComboUC));
             if (parent is MainWindow main)
             {
                 main.menuComponent.Child = new PickType();
+            }
+            else if (parent is ComboUC c)
+            {
+                this.Content = new ComboUC();
+                if (c.DataContext is Combo combo)
+                {
+                    if (this.DataContext is DragonbornWaffleFries item)
+                    {
+                        combo.Side = item;
+                    }
+                    this.DataContext = combo;
+                }
             }
         }
         /// <summary>

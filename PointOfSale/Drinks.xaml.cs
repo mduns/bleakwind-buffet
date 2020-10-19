@@ -113,6 +113,7 @@ namespace PointOfSale
             {
                 order.Add(ww);
             }
+
         }
         /// <summary>
         /// event handler for the backButton
@@ -125,10 +126,14 @@ namespace PointOfSale
             do
             {
                 parent = LogicalTreeHelper.GetParent(parent);
-            } while (!(parent is MainWindow) && !(parent is null));
+            } while (!(parent is MainWindow) && !(parent is null) && !(parent is ComboUC));
             if (parent is MainWindow main)
             {
                 main.menuComponent.Child = new PickType();
+            }
+            if (parent is ComboUC combo)
+            {
+                this.Content = new ComboUC();
             }
         }
     }

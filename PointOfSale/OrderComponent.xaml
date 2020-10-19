@@ -39,13 +39,13 @@
         <TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" IsReadOnly="True" Text="{Binding Path=Tax, Mode=OneWay, StringFormat={}{0:C2}}"/>
         <TextBox Name="subtotal" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Left" FontSize="15" Text="Subtotal:"/>
         <TextBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" IsReadOnly="True" Text="{Binding Path=Total, Mode=OneWay, StringFormat={}{0:C2}}"/>
-        <Button Name="newButton" Grid.Column="1" Grid.Row ="5" Background="#512888" Click="newButton_Click">
+        <Button Name="payButton" Grid.Column="1" Grid.Row ="5" Background="#512888" Click="payButton_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
-            <TextBlock Text="New" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White" />
+            <TextBlock Text="Pay" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White" />
         </Button>
         <Button Name="deleteButton" Click="deleteButton_Click" Grid.Column="0" Grid.Row ="5" Background="#512888">
             <Button.Resources>

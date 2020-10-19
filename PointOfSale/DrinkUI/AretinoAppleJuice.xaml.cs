@@ -44,10 +44,22 @@ namespace PointOfSale.DrinkUI
             do
             {
                 parent = LogicalTreeHelper.GetParent(parent);
-            } while (!(parent is MainWindow) && !(parent is null));
+            } while ((!(parent is MainWindow) && !(parent is null)) && !(parent is ComboUC));
             if (parent is MainWindow main)
             {
                 main.menuComponent.Child = new PickType();
+            }
+            else if(parent is ComboUC c)
+            {
+                this.Content = new ComboUC();
+                if(c.DataContext is Combo combo)
+                {
+                    if (this.DataContext is AretinoAppleJuice item)
+                    {
+                        combo.Drink = item;
+                    }
+                    this.DataContext = combo;
+                }
             }
         }
         /// <summary>
