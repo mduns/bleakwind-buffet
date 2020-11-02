@@ -1,0 +1,54 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h1 class="welcome">Welcome to the Bleakwind Buffet!</h1>
+        <p class="combo-p">
+            We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger.
+            Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.
+        </p>
+        <p class="combo-p">Make it a combo! Combine any entree, side, and drink for a $1 discount</p>
+        <p class="combo-p"> Sailor Soda flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon </p>
+                <h2 class="menu-type">Entrees</h2>
+                <ul class="menu-entree">
+                    @foreach (BleakwindBuffet.Data.IOrderItem i in BleakwindBuffet.Data.Menu.Menu.Entrees())
+                    {
+                    <li>
+                        <div class="menu-item">
+                            <div class="menu-name">@i.ToString()</div>
+                            <div class="menu-price">Price: $@i.Price</div>
+                            <div class="menu-cals">Calories: @i.Calories</div>
+                        </div>
+                    </li>
+                    }
+                </ul>
+                <h2 class="menu-type">Drinks</h2>
+                <ul class="menu-drink">
+                    @foreach (BleakwindBuffet.Data.IOrderItem i in BleakwindBuffet.Data.Menu.Menu.Drinks())
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <div class="menu-name">@i.ToString()</div>
+                                <div class="menu-price">Price: $@i.Price</div>
+                                <div class="menu-cals">Calories: @i.Calories</div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+                <h2 class="menu-type">Sides</h2>
+                <ul class="menu-side">
+                    @foreach (BleakwindBuffet.Data.IOrderItem i in BleakwindBuffet.Data.Menu.Menu.Sides())
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <div class="menu-name">@i.ToString()</div>
+                                <div class="menu-price">Price: $@i.Price</div>
+                                <div class="menu-cals">Calories: @i.Calories</div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+    </div>
