@@ -12,22 +12,38 @@
         </p>
         <p class="combo-p">Make it a combo! Combine any entree, side, and drink for a $1 discount</p>
         <p class="combo-p"> Sailor Soda flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon </p>
-                <h2 class="menu-type">Entrees</h2>
-                <ul class="menu-entree">
-                    @foreach (BleakwindBuffet.Data.IOrderItem i in BleakwindBuffet.Data.Menu.Menu.Entrees())
-                    {
-                    <li>
-                        <div class="menu-item">
-                            <div class="menu-name">@i.ToString()</div>
-                            <div class="menu-price">Price: $@i.Price</div>
-                            <div class="menu-cals">Calories: @i.Calories</div>
-                        </div>
-                    </li>
-                    }
-                </ul>
-                <h2 class="menu-type">Drinks</h2>
-                <ul class="menu-drink">
-                    @foreach (BleakwindBuffet.Data.IOrderItem i in BleakwindBuffet.Data.Menu.Menu.Drinks())
+        <form id="item-database">
+            <div id="search">
+                <input type="text" name="SearchTerms" value="@Model.SearchTerms" placeholder="Item Name"/>
+                <input type="submit" value="Search" />
+            </div>
+            <div id="filters">
+                <h4>Categories</h4>
+                @foreach(String type in BleakwindBuffet.Data.Menu.Menu.Category)
+                {
+                    <label>
+                        @type
+                        <input type="checkbox" name="Categories" value="@type"
+                               checked="@Model.Categories.Contains(type)"/>
+                    </label>
+                }
+                <h4>Calories</h4>
+                <div>
+                    <input name="calMin" type="number" min="0" step="1" placeholder="Min" />
+                    to
+                    <input name="calMax" type="number" min="0" step="1" placeholder="Max" />
+                </div>
+                <h4>Price</h4>
+                <div>
+                    $
+                    <input name="priceMin" type="number" min="0" step=".01" placeholder="Min" />
+                    to $
+                    <input name="priceMax" type="number" min="0" step=".01" placeholder="Max" />
+                </div>
+            </div>
+            <div id="results">
+                <ul class="menu-list">
+                    @foreach (BleakwindBuffet.Data.IOrderItem i in @Model.items)
                     {
                         <li>
                             <div class="menu-item">
@@ -38,17 +54,6 @@
                         </li>
                     }
                 </ul>
-                <h2 class="menu-type">Sides</h2>
-                <ul class="menu-side">
-                    @foreach (BleakwindBuffet.Data.IOrderItem i in BleakwindBuffet.Data.Menu.Menu.Sides())
-                    {
-                        <li>
-                            <div class="menu-item">
-                                <div class="menu-name">@i.ToString()</div>
-                                <div class="menu-price">Price: $@i.Price</div>
-                                <div class="menu-cals">Calories: @i.Calories</div>
-                            </div>
-                        </li>
-                    }
-                </ul>
+            </div>
+        </form>
     </div>

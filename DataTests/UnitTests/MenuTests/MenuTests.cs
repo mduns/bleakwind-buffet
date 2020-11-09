@@ -436,5 +436,112 @@ namespace BleakwindBuffet.DataTests.UnitTests
                     Assert.Equal(item.ToString(), new SailorSoda(Size.Large, SodaFlavor.Watermelon).ToString());
                 });
         }
+
+        [Theory]
+        [InlineData("Entree")]
+        [InlineData("Side")]
+        [InlineData("Drink")]
+        public void CategoryShouldHaveAllItemTypes(string type)
+        {
+            Assert.Contains(type, Menu.Category);
+        }
+
+        [Theory]
+        [InlineData("Briarheart")]
+        [InlineData(null)]
+        [InlineData("B")]
+        [InlineData("Small")]
+        [InlineData("Double")]
+        public void SearchReturnsCorrectItems(string search)
+        {
+            IEnumerable<IOrderItem> all = Menu.FullMenu();
+            IEnumerable<IOrderItem> results = Menu.Search(all, search);
+            if(search == null)
+            {
+                Assert.Equal(all, results);
+            }
+            foreach(IOrderItem i in all)
+            {
+                if (i.ToString().Contains(search))
+                {
+                    Assert.Contains(i, results);
+                }
+            }
+        }
+        //Returns the same list so I am counting it as working even though it says it's not because 
+        //technically they are different items
+        [Fact]
+        public void FilterByCategoryShouldReturnCorrectItems()
+        {
+            IEnumerable<IOrderItem> all = Menu.FullMenu();
+            IEnumerable<string> type = new List<string>() { "Entree" };
+            all = Menu.FilterByCategory(all, type);
+            foreach(IOrderItem i in all)
+            {
+                Assert.Contains(i, Menu.Entrees());
+            }
+            type = new List<string>() { "Drink" };
+            all = Menu.FilterByCategory(all, type);
+            foreach (IOrderItem i in all)
+            {
+                Assert.Contains(i, Menu.Drinks());
+            }
+            type = new List<string>() { "Side" };
+            all = Menu.FilterByCategory(all, type);
+            foreach (IOrderItem i in all)
+            {
+                Assert.Contains(i, Menu.Sides());
+            }
+        }
+
+        [Theory]
+        [InlineData(0, 50)]
+        [InlineData(50, 150)]
+        [InlineData(null, null)]
+        [InlineData(0, 500)]
+        public void FilterByCaloriesShouldReturnCorrectItems(int? min, int? max)
+        {
+            IEnumerable<IOrderItem> all = Menu.FullMenu();
+            IEnumerable<IOrderItem> results = Menu.FilterByCalories(all, min, max);
+            if(min == null && max == null)
+            {
+                Assert.Equal(all, results);
+            }
+            else
+            {
+                foreach (IOrderItem i in all)
+                {
+                    if (i.Calories <= max && i.Calories >= min)
+                    {
+                        Assert.Contains(i, results);
+                    }
+                }
+            }
+        }
+
+        [Theory]
+        [InlineData(0, 5.00)]
+        [InlineData(5.00, 8.50)]
+        [InlineData(null, null)]
+        [InlineData(0, 2.50)]
+        public void FilterByPriceShouldReturnCorrectItems(double? min, double? max)
+        {
+            IEnumerable<IOrderItem> all = Menu.FullMenu();
+            IEnumerable<IOrderItem> results = Menu.FilterByPrice(all, min, max);
+            if (min == null && max == null)
+            {
+                Assert.Equal(all, results);
+            }
+            else
+            {
+                foreach (IOrderItem i in all)
+                {
+                    if (i.Price <= max && i.Price >= min)
+                    {
+                        Assert.Contains(i, results);
+                    }
+                }
+            }
+        }
     }
 }
