@@ -92,6 +92,28 @@ namespace BleakwindBuffet.Data.Sides
             Size = Size.Small;
         }
         /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "Cheesey Grits.";
+                return description;
+            }
+        }
+        /// <summary>
+        /// The category of the item
+        /// </summary>
+        public string Category
+        {
+            get
+            {
+                return "Side";
+            }
+        }
+        /// <summary>
         /// overrides ToString method to return "Size Mad Otar Grits"
         /// </summary>
         /// <returns></returns>

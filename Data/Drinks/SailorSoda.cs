@@ -120,6 +120,28 @@ namespace BleakwindBuffet.Data.Drinks
         {
             Size = Size.Small;
         }
+        /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.";
+                return description;
+            }
+        }
+        /// <summary>
+        /// The category of the item
+        /// </summary>
+        public string Category
+        {
+            get
+            {
+                return "Drink";
+            }
+        }
         ///<summary>
         /// overrides ToString method to return "Size Flavor Sailor Soda"
         /// </summary>

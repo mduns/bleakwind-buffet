@@ -158,6 +158,23 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        public string Description
+        {
+            get
+            {
+                return "It's a combo";
+            }
+        }
+        /// <summary>
+        /// The category of the item
+        /// </summary>
+        public string Category
+        {
+            get
+            {
+                return "Combo";
+            }
+        }
         public override string ToString()
         {
             return "Combo";

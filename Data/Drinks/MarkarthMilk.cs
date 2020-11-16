@@ -107,6 +107,28 @@ namespace BleakwindBuffet.Data.Drinks
             Size = Size.Small;
         }
         /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "Hormone-free organic 2% milk.";
+                return description;
+            }
+        }
+        /// <summary>
+        /// The category of the item
+        /// </summary>
+        public string Category
+        {
+            get
+            {
+                return "Drink";
+            }
+        }
+        /// <summary>
         /// overrides ToString method to return "Size Markarth Milk"
         /// </summary>
         /// <returns></returns>

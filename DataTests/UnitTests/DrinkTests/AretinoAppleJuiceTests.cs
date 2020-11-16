@@ -174,5 +174,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var aj = new AretinoAppleJuice();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(aj);
         }
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.Equal("Fresh squeezed apple juice.", aj.Description);
+        }
     }
 }

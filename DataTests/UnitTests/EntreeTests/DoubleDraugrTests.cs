@@ -324,5 +324,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var dd = new DoubleDraugr();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(dd);
         }
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var dd = new DoubleDraugr();
+            Assert.Equal("Double patty burger on a brioche bun. Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo.", dd.Description);
+        }
     }
 }

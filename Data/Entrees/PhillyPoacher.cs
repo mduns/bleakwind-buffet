@@ -84,6 +84,28 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
         /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+                return description;
+            }
+        }
+        /// <summary>
+        /// The category of the item
+        /// </summary>
+        public string Category
+        {
+            get
+            {
+                return "Entree";
+            }
+        }
+        /// <summary>
         /// overrides to string method to "Philly Poacher"
         /// </summary>
         /// <returns></returns>

@@ -92,6 +92,28 @@ namespace BleakwindBuffet.Data.Sides
             Size = Size.Small;
         }
         /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.";
+                return description;
+            }
+        }
+        /// <summary>
+        /// The category of the item
+        /// </summary>
+        public string Category
+        {
+            get
+            {
+                return "Side";
+            }
+        }
+        /// <summary>
         /// overrides ToString method to return "Size Vokun Salad"
         /// </summary>
         /// <returns></returns>

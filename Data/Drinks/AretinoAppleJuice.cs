@@ -112,7 +112,28 @@ namespace BleakwindBuffet.Data.Drinks
         {
             Size = Size.Small;
         }
-
+        /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "Fresh squeezed apple juice.";
+                return description;
+            }
+        }
+        /// <summary>
+        /// The category of the item
+        /// </summary>
+        public string Category
+        {
+            get
+            {
+                return "Drink";
+            }
+        }
         /// <summary>
         /// overrides ToString method to return "Size Aretino Apple Juice"
         /// </summary>

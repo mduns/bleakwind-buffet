@@ -122,6 +122,28 @@ namespace BleakwindBuffet.Data.Drinks
             Size = Size.Small;
         }
         /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "It’s water. Just water.";
+                return description;
+            }
+        }
+        /// <summary>
+        /// The category of the item
+        /// </summary>
+        public string Category
+        {
+            get
+            {
+                return "Drink";
+            }
+        }
+        /// <summary>
         /// overrides ToString method to return "Size Warrior Water"
         /// </summary>
         /// <returns></returns>

@@ -27,6 +27,14 @@ namespace BleakwindBuffet.Data
         /// the special instructions to be used on an entree, side, or drink
         /// </summary>
         List<string> SpecialInstructions { get; }
+        /// <summary>
+        /// the description of the item
+        /// </summary>
+        string Description { get; }
+        /// <summary>
+        /// the category of the item (entree, side, drink)
+        /// </summary>
+        string Category { get; }
 
         event PropertyChangedEventHandler PropertyChanged;
     }

@@ -92,6 +92,28 @@ namespace BleakwindBuffet.Data.Sides
             Size = Size.Small;
         }
         /// <summary>
+        /// returns the description of the item
+        /// </summary>
+        private string description;
+        public string Description
+        {
+            get
+            {
+                description = "Crispy fried potato waffle fries.";
+                return description;
+            }
+        }
+        /// <summary>
+        /// The category of the item
+        /// </summary>
+        public string Category
+        {
+            get
+            {
+                return "Side";
+            }
+        }
+        /// <summary>
         /// overrides ToString method to return "Size Dragaonborn Waffle Fries"
         /// </summary>
         /// <returns></returns>
